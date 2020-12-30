@@ -4,21 +4,27 @@ public class Vendedor extends Persona{
 	
 	
 	//Atributos de vendedor
-	private String idVendedor;
+	private int idVendedor;
+	private double balance;
 	
 	
 	//Constructor con los param de la superclase
-	public Vendedor(String nombre, String apellidos, String email, String password, String telefono, String idVendedor) {
+	public Vendedor(String nombre, String apellidos, String email, String password, String telefono, int idVendedor, double balance) {
 		
 		//Atributos ya inicializados en la superclase
 		super(nombre, apellidos, email, password, telefono);
 		
-		this.idVendedor = idVendedor;		
+		this.idVendedor = idVendedor;	
+		this.balance = balance;
 	}
 	
 	
 	//Getters
-	public String getIdVendedor() {
+	public int getIdVendedor() {
 		return this.idVendedor;
+	}
+	
+	public double getBalance() {
+		return this.balance;
 	}
 }

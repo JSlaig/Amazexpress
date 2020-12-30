@@ -3,19 +3,25 @@ package controlador;
 public class Comprador extends Persona{
 	
 	//Atributos de Comprador
-	private String idComprador;
+	private int idComprador;
+	private double balance;
 		
 		//Constructor con los param de la superclase
-		public Comprador(String nombre, String apellidos, String email, String password, String telefono, String idComprador) {
+		public Comprador(String nombre, String apellidos, String email, String password, String telefono, int idComprador, double balance) {
 			
 			//Atributos ya inicializados en la superclase
 			super(nombre, apellidos, email, password, telefono);
 			
 			this.idComprador = idComprador;
+			this.balance = balance;
 		}
 		
 		//Getters
-		public String getIdComprador() {
+		public int getIdComprador() {
 			return this.idComprador;
+		}
+		
+		public double getBalance() {
+			return this.balance;
 		}
 }

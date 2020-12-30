@@ -3,10 +3,10 @@ package controlador;
 public class Administrador extends Persona{	
 
 	//Atributos de Administrador
-	private String idAdministrador;
+	private int idAdministrador;
 	
 	//Constructor con los param de la superclase
-	public Administrador(String nombre, String apellidos, String email, String password, String telefono, String idAdministrador) {
+	public Administrador(String nombre, String apellidos, String email, String password, String telefono, int idAdministrador) {
 		
 		//Atributos ya inicializados en la superclase
 		super(nombre, apellidos, email, password, telefono);
@@ -15,7 +15,7 @@ public class Administrador extends Persona{
 	}
 	
 	//Getters
-	public String getIdAdministrador() {
+	public int getIdAdministrador() {
 		return this.idAdministrador;
 	}
 }
