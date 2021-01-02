@@ -19,7 +19,9 @@ public class AmazexpressApp {
 	//Instancia del objeto para singleton
 	private static AmazexpressApp app;
 	
-	
+	/**
+	 * Constructor de la aplicacion que inicializa los hashmaps
+	 */
 	private AmazexpressApp() {		
 		this.admins = new HashMap<Integer, Administrador>();
 		this.vendedores = new HashMap<Integer, Vendedor>();
@@ -52,7 +54,7 @@ public class AmazexpressApp {
 	
 	
 	/**
-	 * Funcion que se encarga de registrar usuarios en la aplicacion
+	 * Metodo que se encarga de registrar usuarios en la aplicacion
 	 * @param tipo admin, comprador o vendedor
 	 * @param nombre clase Persona
 	 * @param apellidos clase Persona
@@ -106,5 +108,68 @@ public class AmazexpressApp {
 		}
 		
 	
+	}
+
+	/**
+	 * Metodo que se encarga de validar o no un login
+	 * @param tipo admin, comprador o vendedor
+	 * @param nUsuario clase Persona
+	 * @param pass clase Persona
+	 * @return true o false dependiendo de si valida o no
+	 */
+	public boolean login(String tipo, String nUsuario, String pass) {
+		
+		if(tipo == "admin") {
+			
+			int i = 1;
+			
+			if(admins.get(i) == null) return false;
+				
+			while(!nUsuario.equals(admins.get(i).getNUsuario()) && i < admins.size()) {
+				i++;
+			}
+			
+			if(nUsuario.equals(admins.get(i).getNUsuario()) && pass.equals(admins.get(i).getPass())) {
+				return true;
+			}else {
+				return false;
+			}
+			
+		}else if(tipo == "comprador") {
+			
+			int i = 1;
+			
+			if(compradores.get(i) == null) return false;
+				
+			while(!nUsuario.equals(compradores.get(i).getNUsuario()) && i < compradores.size()) {
+				i++;
+			}
+			
+			if(nUsuario.equals(compradores.get(i).getNUsuario()) && pass.equals(compradores.get(i).getPass())) {
+				return true;
+			}else{
+				return false;
+			}
+			
+		}else if(tipo == "vendedor") {
+			
+			int i = 1;
+			
+			if(vendedores.get(i) == null) return false;
+				
+			while(!nUsuario.equals(vendedores.get(i).getNUsuario()) && i < vendedores.size()) {
+				i++;
+			}
+			
+			if(nUsuario.equals(vendedores.get(i).getNUsuario()) && pass.equals(vendedores.get(i).getPass())) {
+				return true;
+			}else{
+				return false;
+			}
+			
+		}else {
+			System.err.println("Tipo de usuario desconocido");
+			return false;
+		}
 	}
 }

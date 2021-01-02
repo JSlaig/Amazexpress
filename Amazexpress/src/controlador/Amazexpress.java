@@ -1,6 +1,5 @@
-package vista;
+package controlador;
 	
-import controlador.AmazexpressApp;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
