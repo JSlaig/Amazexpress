@@ -35,6 +35,7 @@ public class AmazexpressApp {
 		
 		if(app == null) {
 			app = new AmazexpressApp();
+			System.out.println("Amazexpress ejecutado correctamente");
 		}else {
 			System.err.println("Solo puede haber una instancia ejecutandose");
 		}
