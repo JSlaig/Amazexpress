@@ -29,7 +29,7 @@ public class AmazexpressApp {
 	 * Retorna el objeto sobre el cual se ejecutara la interfaz grafica.
 	 * @return
 	 */
-	public static AmazexpressApp getSingletonInstance() {
+	public static AmazexpressApp getSingletonInstancia() {
 		
 		if(app == null) {
 			app = new AmazexpressApp();
@@ -40,8 +40,56 @@ public class AmazexpressApp {
 		return app;
 	}
 	
-	//Metodo de importacion de datos persistentes nada mas comienze la ejecucion del programa, se tendra que encargar de inicializar los hashmaps si no estan creados
-	public void initialize() {
+	/**
+	 * Metodo que se encarga de la importacion de datos persistentes de la base de datos
+	 */
+	public void initializar() {
 		//Por implementar
+	}
+	
+	public boolean registro(String tipo, String nombre, String apellidos, String email, String nUsuario, String pass, String telefono) {
+		
+		if(tipo == "admin") {
+			int idAdmin;
+			
+			if(admins.isEmpty()) idAdmin = 1;
+			else {
+				 idAdmin = admins.size() + 1;				
+			}
+			
+			admins.put(idAdmin, new Administrador(nombre, apellidos, email, nUsuario, pass, telefono, idAdmin));
+			
+			return true;
+			
+		}else if(tipo == "comprador") {
+			int idComprador;
+			
+			if(compradores.isEmpty()) idComprador = 1;
+			else {
+				 idComprador = compradores.size() + 1;				
+			}
+			
+			compradores.put(idComprador, new Comprador(nombre, apellidos, email, nUsuario, pass, telefono, idComprador, 2000));
+			
+			return true;
+			
+		}else if(tipo == "vendedor") {
+			int idVendedor;
+			
+			if(vendedores.isEmpty()) idVendedor = 1;
+			else {
+				idVendedor = vendedores.size() + 1;				
+			}
+			
+			vendedores.put(idVendedor, new Vendedor(nombre, apellidos, email, nUsuario, pass, telefono, idVendedor, 0));
+			
+			return true;
+			
+		}else {
+			System.err.println("Tipo de usuario desconocido");
+			return false;
+		}
+		
+	
 	}
 }

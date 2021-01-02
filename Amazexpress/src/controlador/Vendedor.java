@@ -9,10 +9,10 @@ public class Vendedor extends Persona{
 	
 	
 	//Constructor con los param de la superclase
-	public Vendedor(String nombre, String apellidos, String email, String password, String telefono, int idVendedor, double balance) {
+	public Vendedor(String nombre, String apellidos, String email, String nUsuario, String password, String telefono, int idVendedor, double balance) {
 		
 		//Atributos ya inicializados en la superclase
-		super(nombre, apellidos, email, password, telefono);
+		super(nombre, apellidos, email, nUsuario, password, telefono);
 		
 		this.idVendedor = idVendedor;	
 		this.balance = balance;

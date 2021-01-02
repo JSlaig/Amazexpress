@@ -7,10 +7,10 @@ public class Comprador extends Persona{
 	private double balance;
 		
 		//Constructor con los param de la superclase
-		public Comprador(String nombre, String apellidos, String email, String password, String telefono, int idComprador, double balance) {
+		public Comprador(String nombre, String apellidos, String email, String nUsuario, String password, String telefono, int idComprador, double balance) {
 			
 			//Atributos ya inicializados en la superclase
-			super(nombre, apellidos, email, password, telefono);
+			super(nombre, apellidos, email, nUsuario, password, telefono);
 			
 			this.idComprador = idComprador;
 			this.balance = balance;

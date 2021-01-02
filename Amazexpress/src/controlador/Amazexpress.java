@@ -5,6 +5,6 @@ public class Amazexpress {
 	public static void main(String[] args) {
 		
 		//Creacion de objeto de la app
-		AmazexpressApp app = AmazexpressApp.getSingletonInstance();
+		AmazexpressApp app = AmazexpressApp.getSingletonInstancia();
 	}
 }

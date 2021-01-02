@@ -10,18 +10,21 @@ public class Persona {
 	
 	private String email;
 	
-	private String password;
+	private String nUsuario;
+	
+	private String pass;
 	
 	private String telefono;
 	
 	
 	//Constructor
 	
-	public Persona(String nombre, String apellidos, String email, String password, String telefono) {		
+	public Persona(String nombre, String apellidos, String email, String nUsuario, String pass, String telefono) {		
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
-		this.password = password;
+		this.nUsuario = nUsuario;
+		this.pass = pass;
 		this.telefono = telefono;
 	}
 	
@@ -41,10 +44,14 @@ public class Persona {
 	public String getEmail() {
 		return email;
 	}
+	
+	public String getNUsuario() {
+		return this.nUsuario;
+	}
 
 
-	public String getPassword() {
-		return password;
+	public String getPass() {
+		return pass;
 	}
 
 
@@ -69,9 +76,12 @@ public class Persona {
 		this.email = email;
 	}
 
+	public void setNUsuario(String nUsuario) {
+		this.nUsuario = nUsuario;
+	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String pass) {
+		this.pass = pass;
 	}
 
 
