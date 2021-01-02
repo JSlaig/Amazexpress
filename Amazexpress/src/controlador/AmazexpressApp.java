@@ -1,10 +1,6 @@
-package mainApp;
+package controlador;
 
 import java.util.HashMap;
-
-import controlador.Administrador;
-import controlador.Comprador;
-import controlador.Vendedor;
 
 //clase que crea el objeto base de toda la aplicacion permitiendo una sola instancia basada en el patron singleton
 public class AmazexpressApp {

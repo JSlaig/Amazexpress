@@ -1,5 +1,4 @@
-import mainApp.AmazexpressApp;
-
+package controlador;
 //Clase main que comenzara con toda la ejecucion de la app
 public class Amazexpress {
 	
