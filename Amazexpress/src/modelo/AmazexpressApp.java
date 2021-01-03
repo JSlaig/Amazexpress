@@ -37,6 +37,7 @@ public class AmazexpressApp {
 		
 		if(app == null) {
 			app = new AmazexpressApp();
+			app.inicializar();
 			System.out.println("Amazexpress ejecutado correctamente");
 		}else {
 			System.err.println("Solo puede haber una instancia ejecutandose");
@@ -48,7 +49,7 @@ public class AmazexpressApp {
 	/**
 	 * Metodo que se encarga de la importacion de datos persistentes de la base de datos
 	 */
-	public void initializar() {
+	public void inicializar() {
 		//Por implementar
 	}
 	
@@ -171,5 +172,53 @@ public class AmazexpressApp {
 			System.err.println("Tipo de usuario desconocido");
 			return false;
 		}
+	}
+
+	/**
+	 * Metodo que devuelve el objeto del usuario que ha iniciado sesion
+	 * @param nUsuario Nombre de usuario
+	 * @return Objeto del usuario
+	 */
+	public Administrador getAdmin(String nUsuario) {
+		
+		int i = 1;
+		
+		while(!nUsuario.equals(admins.get(i).getNUsuario())){
+			i++;
+		}
+		
+		return admins.get(i);
+	}
+	
+	/**
+	 * Metodo que devuelve el objeto del usuario que ha iniciado sesion
+	 * @param nUsuario Nombre de usuario
+	 * @return Objeto del usuario
+	 */
+	public Vendedor getVendedor(String nUsuario) {
+			
+			int i = 1;
+			
+			while(!nUsuario.equals(vendedores.get(i).getNUsuario())){
+				i++;
+			}
+			
+			return vendedores.get(i);
+		}
+	
+	/**
+	 * Metodo que devuelve el objeto del usuario que ha iniciado sesion
+	 * @param nUsuario Nombre de usuario
+	 * @return Objeto del usuario
+	 */
+	public Comprador getComprador(String nUsuario) {
+		
+		int i = 1;
+		
+		while(!nUsuario.equals(compradores.get(i).getNUsuario())){
+			i++;
+		}
+		
+		return compradores.get(i);
 	}
 }

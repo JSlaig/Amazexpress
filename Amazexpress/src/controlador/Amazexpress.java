@@ -19,7 +19,7 @@ public class Amazexpress extends Application {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("/vista/LoginWindow.fxml"));
+			loader.setLocation(Main.class.getResource("/vista/LoginControlador.fxml"));
 			Pane ventana = (Pane) loader.load();
 			
 			//Show the scene containing the root layout
@@ -32,11 +32,8 @@ public class Amazexpress extends Application {
 		}		
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) {	
 		
-		AmazexpressApp app = AmazexpressApp.getSingletonInstancia(); 
-		
-		launch(args);
-	
+		launch(args);		
 	}
 }
