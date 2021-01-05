@@ -19,7 +19,7 @@ public class Amazexpress extends Application {
 		try {
 		
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/vista/MainUI.fxml"));
+			loader.setLocation(getClass().getResource("/vista/LoginUI.fxml"));
 			Pane ventana = (Pane) loader.load();
 			
 			Scene scene = new Scene(ventana);

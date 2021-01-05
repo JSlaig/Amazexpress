@@ -1,12 +1,57 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
 .root {
+	-fx-base: #2d3133;
+	
+	-fx-font-family: "Segoe UI Black";
+  	-fx-font-size: 12pt;
+ 	-fx-text-fill: blue;
+}
 
+.registro{
+	-fx-backgroundcolor: #ffffff;
 }
 
 Button {
-	-fx-background-color:transparent;
-	-fx-border-color: #0e99d5;
-	-fx-border-width: 2;
+	
+	-fx-font-size: 15pt;
+	
+    -fx-min-width: 150px;
+    -fx-min-height: 150px; 
+    -fx-max-width: 150px; 
+    -fx-max-height: 150px;
+    
+	-fx-background-color: transparent;
+	-fx-border-color: #2b7fa3;
+	-fx-border-width: 3;
+	-fx-border-radius: 100px;
+	-fx-background-radius: 100px;
+}
+
+TextField{
+	-fx-background-color: transparent;
+	-fx-border-color: #2b7fa3;
+	-fx-border-width: 3;
 	-fx-border-radius: 25px;
+	-fx-background-radius: 100px;
+	
+	-fx-text-fill: white
+}
+
+PasswordField{
+	-fx-background-color: transparent;
+	-fx-border-color: #2b7fa3;
+	-fx-border-width: 3;
+	-fx-border-radius: 25px;
+	-fx-background-radius: 100px;
+	
+	-fx-text-fill: white	
+}
+
+ChoiceBox{
+	-fx-background-color: transparent;
+	-fx-border-color: #2b7fa3;
+	-fx-border-width: 3;
+	-fx-border-radius: 25px;
+	-fx-background-radius: 100px;
 }

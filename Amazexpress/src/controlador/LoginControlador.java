@@ -3,6 +3,7 @@ package controlador;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,6 +14,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 import modelo.AmazexpressApp;
 
 public class LoginControlador {
@@ -20,7 +24,9 @@ public class LoginControlador {
 	private AmazexpressApp app; 
 	
 	ObservableList list = FXCollections.observableArrayList();
-
+	
+	
+	
 	@FXML
 	private Label estado;
 	
@@ -45,12 +51,12 @@ public class LoginControlador {
     	inicializar();
     	
     	
-    	assert estado != null : "fx:id=\"estado\" was not injected: check your FXML file 'MainUI.fxml'.";
-        assert usCampo != null : "fx:id=\"usCampo\" was not injected: check your FXML file 'MainUI.fxml'.";
-        assert tipoCampo != null : "fx:id=\"tipoCampo\" was not injected: check your FXML file 'MainUI.fxml'.";
-        assert regBoton != null : "fx:id=\"regBoton\" was not injected: check your FXML file 'MainUI.fxml'.";
-        assert passCampo != null : "fx:id=\"passCampo\" was not injected: check your FXML file 'MainUI.fxml'.";
-        assert logBoton != null : "fx:id=\"logBoton\" was not injected: check your FXML file 'MainUI.fxml'.";
+    	assert estado != null : "fx:id=\"estado\" was not injected: check your FXML file 'LoginUI.fxml'.";
+        assert usCampo != null : "fx:id=\"usCampo\" was not injected: check your FXML file 'LoginUI.fxml'.";
+        assert tipoCampo != null : "fx:id=\"tipoCampo\" was not injected: check your FXML file 'LoginUI.fxml'.";
+        assert regBoton != null : "fx:id=\"regBoton\" was not injected: check your FXML file 'LoginUI.fxml'.";
+        assert passCampo != null : "fx:id=\"passCampo\" was not injected: check your FXML file 'LoginUI.fxml'.";
+        assert logBoton != null : "fx:id=\"logBoton\" was not injected: check your FXML file 'LoginUI.fxml'.";
 
     }  
 
@@ -74,6 +80,14 @@ public class LoginControlador {
     	});
     }
     
+    private void inicializarRegistroBoton() {
+    	regBoton.setOnAction(new EventHandler<ActionEvent>() {
+    	    @Override public void handle(ActionEvent e) {
+    	        registro(e);
+    	    }
+    	});
+    }
+    
     private void inicializarCheckBox() {
     	
     	list.removeAll(list);
@@ -87,11 +101,12 @@ public class LoginControlador {
     	list.addAll(tipos[0], tipos[1], tipos[2]);
     	
     	tipoCampo.getItems().addAll(list);
+    	tipoCampo.setValue("---");
     }
     
     @FXML
     void registro(ActionEvent event) {
-
+    	
     }
     
     @FXML
