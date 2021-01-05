@@ -6,7 +6,7 @@
 
 Button {
 	-fx-background-color:transparent;
-	-fx-border-color: #0e99d5
+	-fx-border-color: #0e99d5;
 	-fx-border-width: 2;
 	-fx-border-radius: 25px;
 }
