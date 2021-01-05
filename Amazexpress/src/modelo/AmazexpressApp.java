@@ -37,7 +37,7 @@ public class AmazexpressApp {
 		
 		if(app == null) {
 			app = new AmazexpressApp();
-			app.inicializar();
+			app.importarBBDD();
 			System.out.println("Amazexpress ejecutado correctamente");
 		}else {
 			System.err.println("Solo puede haber una instancia ejecutandose");
@@ -49,7 +49,7 @@ public class AmazexpressApp {
 	/**
 	 * Metodo que se encarga de la importacion de datos persistentes de la base de datos
 	 */
-	public void inicializar() {
+	public void importarBBDD() {
 		//Por implementar
 	}
 	
