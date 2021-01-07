@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
-
+<Pane fx:id="paneReg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="694.0" prefWidth="1280.0" styleClass="parent" stylesheets="@application.css" translateY="25.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="registro" layoutX="670.0" layoutY="529.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="255.0" text="REGISTRO" />
+      <Button fx:id="cancelar" layoutX="362.0" layoutY="529.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="255.0" text="CANCELAR" />
+      <PasswordField fx:id="pass" layoutX="670.0" layoutY="273.0" prefHeight="41.0" prefWidth="255.0" promptText="Contraseña" styleClass="txtfield" stylesheets="@application.css" />
+      <TextField fx:id="email" layoutX="362.0" layoutY="354.0" prefHeight="31.0" prefWidth="563.0" promptText="Email" styleClass="txtfield" stylesheets="@application.css" />
+      <TextField fx:id="telefono" layoutX="362.0" layoutY="416.0" prefHeight="31.0" prefWidth="563.0" promptText="Telefono" styleClass="txtfield" stylesheets="@application.css" />
+      <TextField fx:id="nombre" layoutX="362.0" layoutY="184.0" prefHeight="41.0" prefWidth="255.0" promptText="Nombre" styleClass="txtfield" stylesheets="@application.css" />
+      <TextField fx:id="nUsuario" layoutX="362.0" layoutY="273.0" prefHeight="41.0" prefWidth="255.0" promptText="Nombre de usuario" styleClass="txtfield" stylesheets="@application.css" />
+      <TextField fx:id="apellidos" layoutX="670.0" layoutY="184.0" prefHeight="41.0" prefWidth="255.0" promptText="Apellidos" styleClass="txtfield" stylesheets="@application.css" />
+      <ChoiceBox fx:id="tipo" layoutX="362.0" layoutY="92.0" prefHeight="31.0" prefWidth="563.0" styleClass="txtfield" stylesheets="@application.css" />
+   </children>
+   <padding>
+      <Insets top="25.0" />
+   </padding>
+</Pane>

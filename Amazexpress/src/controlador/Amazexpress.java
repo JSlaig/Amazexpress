@@ -3,13 +3,10 @@ package controlador;
 import java.io.IOException;
 
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
-import modelo.AmazexpressApp;
 
 
 public class Amazexpress extends Application {
