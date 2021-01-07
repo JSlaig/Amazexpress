@@ -1,16 +1,27 @@
 package controlador;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 import modelo.AmazexpressApp;
 
 public class RegistroControlador {
@@ -23,6 +34,9 @@ public class RegistroControlador {
 	@FXML
 	private URL location;
 
+	@FXML
+    private Pane paneReg;
+	
 	@FXML
 	private TextField apellidos;
 
@@ -68,9 +82,49 @@ public class RegistroControlador {
 	    
 	private void inicializar() {    	
 	    	
-	   	inicializarCheckBox();	    	
+	   	inicializarCheckBox();	
+	   	inicializarCancelarBoton();
 	}
     
+	
+	private void inicializarCancelarBoton() {
+	    	cancelar.setOnAction(new EventHandler<ActionEvent>() {
+	    	    @Override public void handle(ActionEvent e) {    	        
+						try {
+							cargarVentana("/vista/LoginUI.fxml");
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+					
+	    	    }
+	    	});
+	}
+	
+	private void cargarVentana(String ruta) throws IOException {
+    	//Carga UI de registro
+    	
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(getClass().getResource(ruta));
+		
+    	Pane ventana = (Pane) loader.load();		
+		Scene scene = new Scene(ventana);
+    	
+    	ventana.translateXProperty().set(scene.getWidth());    	
+    	
+    	
+    	//Animacion
+    	Timeline timeline = new Timeline();    	
+    	KeyValue kv = new KeyValue(ventana.translateXProperty(), 0, Interpolator.EASE_IN);    	
+    	KeyFrame kf = new KeyFrame(Duration.seconds(2), kv);    	
+    	timeline.getKeyFrames().add(kf);
+    	
+    	//Borrar la escena actual
+    	timeline.setOnFinished(eventRegistrar -> {
+    		//getParent().getChildren().remove(paneReg);
+    	});
+    	timeline.play();
+    }
     private void inicializarCheckBox() {
     	list.removeAll(list);
     	

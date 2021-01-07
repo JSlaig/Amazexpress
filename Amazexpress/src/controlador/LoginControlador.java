@@ -144,35 +144,14 @@ public class LoginControlador{
     @FXML
     void registro(ActionEvent event) throws IOException {    	
     	
-    	//Carga UI de registro
-    	
-    	FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("/vista/RegistroUI.fxml"));
-		
-    	Pane ventana = (Pane) loader.load();		
-		Scene scene = new Scene(ventana);
-    	
-    	ventana.translateXProperty().set(scene.getWidth());    	
-    	parentContainer.getChildren().add(ventana);
-    	
-    	//Animacion
-    	Timeline timeline = new Timeline();    	
-    	KeyValue kv = new KeyValue(ventana.translateXProperty(), 0, Interpolator.EASE_IN);    	
-    	KeyFrame kf = new KeyFrame(Duration.seconds(2), kv);    	
-    	timeline.getKeyFrames().add(kf);
-    	
-    	//Borrar la escena actual
-    	timeline.setOnFinished(eventRegistrar -> {
-    		parentContainer.getChildren().remove(pane);
-    	});
-    	timeline.play();
+    	cargarVentana("/vista/RegistroUI.fxml");
     }
     
-    private void cargarAdminUI() throws IOException {
+    private void cargarVentana(String ruta) throws IOException {
     	//Carga UI de registro
     	
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("/vista/AdminUI.fxml"));
+    	loader.setLocation(getClass().getResource(ruta));
 		
     	Pane ventana = (Pane) loader.load();		
 		Scene scene = new Scene(ventana);
@@ -215,7 +194,7 @@ public class LoginControlador{
         			System.out.println("Login correcto");
         			estado.setText("Login correcto");
         			
-        			cargarAdminUI();
+        			cargarVentana("/vista/AdminUI.fxml");
         			
         		break;
         		
@@ -225,6 +204,8 @@ public class LoginControlador{
         			System.out.println("Login correcto");
         			estado.setText("Login correcto");
         			
+        			cargarVentana("/vista/CompradorUI.fxml");
+        			
         		break;
         		
         		case "vendedor":
@@ -232,6 +213,8 @@ public class LoginControlador{
         			app.getVendedor(nUsuario);
         			System.out.println("Login correcto");
         			estado.setText("Login correcto");
+        			
+        			cargarVentana("/vista/VendedorUI.fxml");
         			
         		break;
         		
