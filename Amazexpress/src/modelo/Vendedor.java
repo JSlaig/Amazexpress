@@ -20,11 +20,48 @@ public class Vendedor extends Persona{
 	
 	
 	//Getters
+
+//PROPUESTA
+/*	public Vendedor(String nombre, String apellidos, String email, String nUsuario, String password, String telefono) {
+	this.nombre = nombre;
+	this.apelidos = apellidos;
+	this.email = email;
+	this.nUsuario = user;
+	this.password = password;
+	this.telefono = telefono;
+}
+
+//Getters
 	public int getIdVendedor() {
 		return this.idVendedor;
 	}
 	
-	public double getBalance() {
+	public double getbalance() {
 		return this.balance;
 	}
+	
+	public String getNombre() {
+	
+	    return this.nombre;
+	}
+	
+	public String getApellido(){
+	    return this.apellido;
+	}
+	
+	public String getEmail(){
+	    return this.email;
+	}
+	
+	public String getUsuario(){
+	    return this.nUsuario;
+	}
+	
+	public String getPassword(){
+	    return this.password;
+	}
+
+	public String getTelefono(){
+	    return this.telefono;
+	}*/
 }
