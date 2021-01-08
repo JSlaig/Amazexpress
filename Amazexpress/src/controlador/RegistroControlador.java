@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -70,12 +71,16 @@ public class RegistroControlador{
 
 	@FXML
 	private Button registro;
+	
+	 @FXML
+	 private Label estado;
 
 	@FXML
 	void initialize() {
 			System.out.println("Inicializando");
 			inicializar();
 	    	
+			assert estado != null : "fx:id=\"estado\" was not injected: check your FXML file 'LoginUI.fxml'.";
 	 	 	assert apellidos != null : "fx:id=\"apellidos\" was not injected: check your FXML file 'RegistroUI.fxml'.";
 	        assert tipo != null : "fx:id=\"tipo\" was not injected: check your FXML file 'RegistroUI.fxml'.";
 	        assert anchorPane != null : "fx:id=\"anchorPane\" was not injected: check your FXML file 'RegistroUI.fxml'.";
@@ -122,6 +127,14 @@ public class RegistroControlador{
 		app.registro(tipoCampo, nombre.getText(), apellidos.getText(), email.getText(), nUsuario.getText(), pass.getText(), telefono.getText());
 		
 		System.out.println("Registro correcto");
+		estado.setText("Registro correcto");
+		
+		try {
+			Thread.sleep(1*1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		cargarVentana("/vista/LoginUI.fxml");
 	}
