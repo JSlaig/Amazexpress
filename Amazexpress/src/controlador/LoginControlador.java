@@ -22,6 +22,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -30,9 +31,7 @@ import modelo.AmazexpressApp;
 
 public class LoginControlador{
 	
-	private AmazexpressApp app; 
-	
-	ObservableList<String> list = FXCollections.observableArrayList();
+	private AmazexpressApp app; 	
 	
 	@FXML
     private ResourceBundle resources;
@@ -42,6 +41,9 @@ public class LoginControlador{
 
     @FXML
     private StackPane parentContainer;
+    
+    @FXML
+    private AnchorPane anchorRoot;
 
     @FXML
     private Label estado;
@@ -51,18 +53,13 @@ public class LoginControlador{
 
     @FXML
     private ChoiceBox<String> tipoCampo;
+    ObservableList<String> list = FXCollections.observableArrayList();
 
     @FXML
     private Button regBoton;
     
     @FXML
-    private Button logBoton;
-    
-    @FXML
-    private Pane pane;
-
-    @FXML
-    private AnchorPane anchorRoot;
+    private Button logBoton;    
 
     @FXML
     private PasswordField passCampo;
@@ -91,10 +88,10 @@ public class LoginControlador{
     	
     	app.registro("admin", "", "", "", "admin", "admin", "");
     	
-    	inicializarCheckBox();
+    	inicializarChoiceBox();
     	
     	inicializarLoginBoton();
-    	inicializarRegistroBoton();
+    	inicializarRegistroBoton();   	
     	
     }
     
@@ -125,7 +122,7 @@ public class LoginControlador{
     	});
     }
     
-    private void inicializarCheckBox() {
+    private void inicializarChoiceBox() {
     	
     	list.removeAll(list);
     	
@@ -148,28 +145,11 @@ public class LoginControlador{
     }
     
     private void cargarVentana(String ruta) throws IOException {
-    	//Carga UI de registro
+    	Parent ventana = FXMLLoader.load(getClass().getResource(ruta));
+    	parentContainer.getChildren().removeAll();
+    	parentContainer.getChildren().setAll(ventana);
     	
-    	FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource(ruta));
-		
-    	Pane ventana = (Pane) loader.load();		
-		Scene scene = new Scene(ventana);
-    	
-    	ventana.translateXProperty().set(scene.getWidth());    	
-    	parentContainer.getChildren().add(ventana);
-    	
-    	//Animacion
-    	Timeline timeline = new Timeline();    	
-    	KeyValue kv = new KeyValue(ventana.translateXProperty(), 0, Interpolator.EASE_IN);    	
-    	KeyFrame kf = new KeyFrame(Duration.seconds(2), kv);    	
-    	timeline.getKeyFrames().add(kf);
-    	
-    	//Borrar la escena actual
-    	timeline.setOnFinished(eventRegistrar -> {
-    		parentContainer.getChildren().remove(anchorRoot);
-    	});
-    	timeline.play();
+    
     }
     
     @FXML
@@ -228,6 +208,5 @@ public class LoginControlador{
     	}
 
     }
-
-	 
+    
 }

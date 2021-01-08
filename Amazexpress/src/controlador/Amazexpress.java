@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 
 public class Amazexpress extends Application {
-	
+	public static Stage stage = null;
 	@Override
 	public void start(Stage primaryStage) {	
 		try {
@@ -21,6 +21,7 @@ public class Amazexpress extends Application {
 			
 			Scene scene = new Scene(ventana);
 			primaryStage.setScene(scene);
+			this.stage = primaryStage;
 			primaryStage.show();
 			
 		}catch(IOException e) {
