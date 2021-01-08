@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="parent" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.RegistroControlador">
    <children>
-      <ChoiceBox fx:id="tipo" cache="true" layoutX="335.0" layoutY="206.0" prefHeight="40.0" prefWidth="611.0" styleClass="txtfield" stylesheets="@application.css" />
+      <ChoiceBox fx:id="tipo" cache="true" layoutX="335.0" layoutY="206.0" prefHeight="40.0" prefWidth="611.0" styleClass="choiceBox" stylesheets="@application.css" />
       <TextField fx:id="nombre" layoutX="335.0" layoutY="272.0" prefHeight="40.0" prefWidth="255.0" promptText="Nombre" styleClass="txtfield" stylesheets="@application.css" />
       <TextField fx:id="apellidos" layoutX="691.0" layoutY="272.0" prefHeight="40.0" prefWidth="255.0" promptText="Apellidos" styleClass="txtfield" stylesheets="@application.css" />
       <TextField fx:id="nUsuario" layoutX="335.0" layoutY="332.0" prefHeight="40.0" prefWidth="255.0" promptText="Nombre de usuario" styleClass="txtfield" stylesheets="@application.css" />

@@ -40,7 +40,8 @@ public class AmazexpressApp {
 			app.importarBBDD();
 			System.out.println("Amazexpress ejecutado correctamente");
 		}else {
-			System.err.println("Solo puede haber una instancia ejecutandose");
+			//do nothing
+			System.out.println("Instancia invocada");
 		}
 		
 		return app;

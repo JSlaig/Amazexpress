@@ -24,7 +24,7 @@
                   <Image url="@../../Resources/avatar.png" />
                </image>
             </ImageView>
-            <ChoiceBox fx:id="tipoCampo" layoutX="339.0" layoutY="295.0" prefHeight="40.0" prefWidth="611.0" styleClass="txtfield" stylesheets="@application.css" />
+            <ChoiceBox fx:id="tipoCampo" layoutX="339.0" layoutY="295.0" prefHeight="40.0" prefWidth="611.0" styleClass="choiceBox" stylesheets="@application.css" />
             <TextField fx:id="usCampo" layoutX="387.0" layoutY="374.0" prefHeight="40.0" prefWidth="563.0" promptText="Usuario" styleClass="txtfield" stylesheets="@application.css" />
             <PasswordField fx:id="passCampo" layoutX="387.0" layoutY="452.0" prefHeight="40.0" prefWidth="563.0" promptText="Contraseña" styleClass="txtfield" stylesheets="@application.css" />
             <Button fx:id="logBoton" layoutX="850.0" layoutY="591.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="255.0" stylesheets="@application.css" text="LOGIN" textFill="WHITE">
