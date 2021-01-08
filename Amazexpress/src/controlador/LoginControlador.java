@@ -135,7 +135,7 @@ public class LoginControlador{
     	list.addAll(tipos[0], tipos[1], tipos[2]);
     	
     	tipoCampo.getItems().addAll(list);
-    	tipoCampo.setValue("tipo de cuenta");
+    	tipoCampo.setValue("tipo de cuenta"); 
     }
     
     @FXML
