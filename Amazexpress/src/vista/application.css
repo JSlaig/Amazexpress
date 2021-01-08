@@ -22,13 +22,13 @@
 
 Button{
 	-fx-background-color: #EA4C88;
-	-fx-text-fill: #ADADAD;
+	-fx-text-fill: #FFFFFF;
 	-fx-font-size: 14px;
 }
 
 Button:hover{
 	-fx-background-color: #af3d68;
-	-fx-text-fill: #ADADAD;
+	-fx-text-fill: #FFFFFF;
 	-fx-font-size: 14px;
 }
 
