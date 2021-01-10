@@ -17,6 +17,7 @@
 	-fx-background-color: #363b41;
 	-fx-background-radius: 0px;
 	-fx-prompt-text-fill: #ADADAD;
+	-fx-text-fill: #ADADAD;
 	-fx-font-size: 14px;
 }
 
@@ -40,3 +41,15 @@ Button:hover{
 }
 
 .choice-box > .label { -fx-text-fill: #ADADAD }
+
+.dashboardLogo{
+	-fx-background-color: #303138;
+}
+
+.dashboard{
+	-fx-background-color: #3B4148;
+	-fx-background-radius: 0px;
+	-fx-prompt-text-fill: #ADADAD;
+	-fx-text-fill: #ADADAD;
+	-fx-font-size: 14px;
+}

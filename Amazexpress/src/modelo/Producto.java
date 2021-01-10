@@ -5,12 +5,17 @@ public class Producto {
 //Atributos de producto
 	public int idProducto;
 	public boolean vendido;
+	private String nombre;
+	private String estado;
+	private String vendedor;
+	private String descripcion;
+	private String comprador;
 	
 //Constructor
 	public Producto(String nombre, String estado, String descripcion, String vendedor, String comprador, boolean vendido) {
 		this.nombre = nombre;
 		this.estado = estado;
-		this.descripcion = descrip;
+		this.descripcion = descripcion;
 		this.vendedor = vendedor;
 		this.comprador = comprador;
 		this.vendido = vendido;

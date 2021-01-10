@@ -37,6 +37,11 @@
                   <Font size="14.0" />
                </font>
             </Button>
+            <ImageView fitHeight="213.0" fitWidth="647.0" layoutX="470.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/amazexpress_logo.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
