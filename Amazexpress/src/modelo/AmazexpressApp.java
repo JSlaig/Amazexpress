@@ -16,6 +16,18 @@ public class AmazexpressApp {
 		//Lista de compradores
 		private HashMap<Integer, Comprador> compradores;
 		
+	public HashMap<Integer, Administrador> getAdmins() {
+			return admins;
+		}
+
+		public HashMap<Integer, Vendedor> getVendedores() {
+			return vendedores;
+		}
+
+		public HashMap<Integer, Comprador> getCompradores() {
+			return compradores;
+		}
+
 	//Instancia del objeto para singleton
 	private static AmazexpressApp app;
 	
@@ -228,6 +240,6 @@ public class AmazexpressApp {
 	 * @return numero de usuarios de la app
 	 */
 	public int getUserNumber() {
-		return this.compradores.size() + this.vendedores.size();
+		return this.compradores.size() + this.vendedores.size() + this.admins.size();
 	}
 }

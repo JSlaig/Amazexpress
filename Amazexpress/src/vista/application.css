@@ -3,7 +3,7 @@
 .parent{
 	-fx-background-color: #303138;
 	-fx-text-fill: #FFFFFF;
-	-fx-font-size: 20px;
+	-fx-font-size: 30px;
 }
 
 .txtfield{
@@ -56,4 +56,23 @@ Button:hover{
 	-fx-font-size: 14px;
 }
 
-@include circular-progress();
+.AdminButtons{
+	-fx-background-color: #3B4148;
+	-fx-text-fill: #FFFFFF;
+	-fx-font-size: 14px;
+}
+
+.AdminButtons:hover{
+	-fx-background-color: #515963;
+	-fx-text-fill: #FFFFFF;
+	-fx-font-size: 14px;
+}
+
+.AdminButtonsSelected{
+	-fx-background-color: #303138;
+	-fx-text-fill: #FFFFFF;
+	-fx-font-size: 14px;
+}
+
+
+

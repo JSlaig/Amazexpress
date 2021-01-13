@@ -136,7 +136,7 @@ public class RegistroControlador{
 			e.printStackTrace();
 		}
 		
-		cargarVentana("/vista/AdminUI.fxml");
+		cargarVentana("/vista/LoginUI.fxml");
 	}
 	
 	

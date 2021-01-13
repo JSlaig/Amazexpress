@@ -10,10 +10,9 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import modelo.AmazexpressApp;
 
-public class AdminControlador {
+public class AdminControladorComprador {
 
     @FXML
     private AnchorPane root;
@@ -27,9 +26,6 @@ public class AdminControlador {
     private Button crearAdmin;
     
     @FXML
-    private Pane mainUI;
-    
-    @FXML
     private Button cerrarSesion;
     
     @FXML
@@ -39,9 +35,6 @@ public class AdminControlador {
     private Button vendedoresBoton;
    
     @FXML
-    private Button compradoresBoton;
-    
-    @FXML
     private Button administradoresBoton;
     
     @FXML
@@ -49,61 +42,24 @@ public class AdminControlador {
     	
     	app = AmazexpressApp.getSingletonInstancia();
     	
-    	nUsuarios = new Label();
-    	nUsuarios.setText(app.getUserNumber() + " usuarios");
+    	nUsuarios = new Label(app.getUserNumber() + " usuarios");
+    	//nUsuarios.setText();
     	
     	//Inicializaciones
     	inicializarCrearAdminBoton();
     	inicializarCerrarSesion();
     	
     	inicializarBotonNavegacion();
-    	
-    	inicializarRingProgress();
 
         assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'AdminUI.fxml'.";
     } 
     
-    private void inicializarRingProgress() {
-		// TODO Auto-generated method stub
-		
-    	RingProgressIndicator ring1 = new RingProgressIndicator();
-    	ring1.setRingWidth(70);
-    	ring1.setLayoutX(430);
-    	ring1.setLayoutY(350);
-    	
-    	float result1 = app.getCompradores().size() / app.getUserNumber() * 100;
-    	System.out.println(app.getCompradores().size() + " / " + app.getUserNumber() + " * 100 = " + result1);
-    	ring1.setProgress((int) result1);
-    	
-    	RingProgressIndicator ring2 = new RingProgressIndicator();
-    	ring2.setRingWidth(70);
-    	ring2.setLayoutX(770);
-    	ring2.setLayoutY(350);
-    	
-    	float result2 = app.getVendedores().size() / app.getUserNumber() * 100;
-    	System.out.println(app.getVendedores().size() + " / " + app.getUserNumber() + " * 100 = " + result2);
-    	ring2.setProgress((int) result2);
-    	
-    	RingProgressIndicator ring3 = new RingProgressIndicator();
-    	ring3.setRingWidth(70);
-    	ring3.setLayoutX(90);
-    	ring3.setLayoutY(350);
-    	
-    	float result3 = app.getAdmins().size() / app.getUserNumber() * 100;
-    	System.out.println(app.getAdmins().size() + " / " + app.getUserNumber() + " * 100 = " + result3);
-    	ring3.setProgress((int) result3);
-    	
-    	mainUI.getChildren().add(ring1);
-    	mainUI.getChildren().add(ring2);
-    	mainUI.getChildren().add(ring3);
-	}
-
-	@FXML
+    @FXML
 	private void inicializarCerrarSesion() {
 	    	cerrarSesion.setOnAction(new EventHandler<ActionEvent>() {
 	    	    @Override public void handle(ActionEvent e) {    	        
 						try {
-							cargarVentana("/vista/LoginUI.fxml"); 
+							cargarVentana("/vista/LoginUI.fxml");
 						} catch (IOException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -114,10 +70,10 @@ public class AdminControlador {
     
     @FXML
  	private void inicializarBotonNavegacion() {
- 	    	administradoresBoton.setOnAction(new EventHandler<ActionEvent>() {
+ 	    	inicioBoton.setOnAction(new EventHandler<ActionEvent>() {
  	    	    @Override public void handle(ActionEvent e) {    	        
  						try {
- 							cargarVentana("/vista/AdminUI_admin.fxml");
+ 							cargarVentana("/vista/AdminUI.fxml");
  						} catch (IOException e1) {
  							// TODO Auto-generated catch block
  							e1.printStackTrace();
@@ -125,10 +81,10 @@ public class AdminControlador {
  	    	    }
  	    	});
  	    	
- 	    	compradoresBoton.setOnAction(new EventHandler<ActionEvent>() {
+ 	    	administradoresBoton.setOnAction(new EventHandler<ActionEvent>() {
  	    	    @Override public void handle(ActionEvent e) {    	        
  						try {
- 							cargarVentana("/vista/AdminUI_comprador.fxml");
+ 							cargarVentana("/vista/AdminUI_admin.fxml");
  						} catch (IOException e1) {
  							// TODO Auto-generated catch block
  							e1.printStackTrace();

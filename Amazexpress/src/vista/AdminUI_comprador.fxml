@@ -8,13 +8,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="root" prefHeight="720.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.AdminControlador">
+<AnchorPane fx:id="root" prefHeight="720.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.AdminControladorComprador">
    <children>
       <VBox layoutX="240.0" prefHeight="720.0" prefWidth="1040.0">
          <children>
             <Pane prefHeight="106.0" prefWidth="1040.0" styleClass="parent">
                <children>
-                  <Label layoutX="27.0" layoutY="23.0" styleClass="parent" text="INICIO" textFill="#c9bbbb">
+                  <Label layoutX="27.0" layoutY="23.0" styleClass="parent" text="COMPRADORES" textFill="#c9bbbb">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -24,18 +24,9 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="mainUI" prefHeight="615.0" prefWidth="1040.0" styleClass="parent">
+            <Pane prefHeight="615.0" prefWidth="1040.0" styleClass="parent">
                <children>
-                  <Label layoutX="78.0" layoutY="82.0" styleClass="parent" text="La aplicacion actualmente cuenta con un total de " />
-                  <Label fx:id="nUsuarios" layoutX="520.0" layoutY="82.0" prefHeight="30.0" prefWidth="461.0" styleClass="parent" text="n usuarios." />
-                  <Label layoutX="82.0" layoutY="184.0" styleClass="parent" text="En total se han realizado" />
-                  <Label layoutX="418.0" layoutY="184.0" prefHeight="30.0" prefWidth="461.0" styleClass="parent" text="n pedidos." />
-                  <Label layoutX="82.0" layoutY="285.0" styleClass="parent" text="Se ha transferido un total de " />
-                  <Label layoutX="467.0" layoutY="285.0" prefHeight="30.0" prefWidth="461.0" styleClass="parent" text="n dinero." />
                   <Separator prefHeight="3.0" prefWidth="1040.0" />
-                  <Label layoutX="90.0" layoutY="533.0" styleClass="parent" text="Administradores" />
-                  <Label layoutX="430.0" layoutY="533.0" styleClass="parent" text="Compradores" />
-                  <Label layoutX="769.0" layoutY="533.0" styleClass="parent" text="Vendedores" />
                </children>
             </Pane>
          </children>
@@ -58,7 +49,7 @@
                </padding>
             </Label>
             <Separator layoutX="10.0" layoutY="278.0" prefWidth="200.0" styleClass="parent" />
-            <Button fx:id="inicioBoton" mnemonicParsing="false" prefHeight="45.0" prefWidth="240.0" styleClass="AdminButtonsSelected" text="Inicio">
+            <Button fx:id="inicioBoton" mnemonicParsing="false" prefHeight="45.0" prefWidth="240.0" styleClass="AdminButtons" text="Inicio">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -68,7 +59,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Button>
-            <Button fx:id="compradoresBoton" layoutX="10.0" layoutY="116.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="240.0" styleClass="AdminButtons" text="Compradores">
+            <Button fx:id="compradoresBoton" layoutX="10.0" layoutY="116.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="240.0" styleClass="AdminButtonsSelected" text="Compradores">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
