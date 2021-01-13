@@ -222,4 +222,12 @@ public class AmazexpressApp {
 		
 		return compradores.get(i);
 	}
+	
+	/**
+	 * Metodo para calcular el numero de usuarios de la app que no son admins.
+	 * @return numero de usuarios de la app
+	 */
+	public int getUserNumber() {
+		return this.compradores.size() + this.vendedores.size();
+	}
 }

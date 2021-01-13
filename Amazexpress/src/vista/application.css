@@ -2,6 +2,8 @@
 
 .parent{
 	-fx-background-color: #303138;
+	-fx-text-fill: #FFFFFF;
+	-fx-font-size: 20px;
 }
 
 .txtfield{
@@ -53,3 +55,5 @@ Button:hover{
 	-fx-text-fill: #ADADAD;
 	-fx-font-size: 14px;
 }
+
+@include circular-progress();
