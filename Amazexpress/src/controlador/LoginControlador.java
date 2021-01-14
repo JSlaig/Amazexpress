@@ -167,7 +167,7 @@ public class LoginControlador{
     		switch(tipo) {
         		case "admin":	    			
         			//Desde aqui abririamos la ventana de admin
-        			app.getAdmin(nUsuario);
+        			app.getAdmin(nUsuario).setLogged(true);
         			System.out.println("Login correcto");
         			estado.setText("Login correcto");
         			
@@ -177,7 +177,7 @@ public class LoginControlador{
         		
         		case "comprador":
         			//Desde aqui abririamos la ventana de comprador
-        			app.getComprador(nUsuario);
+        			app.getComprador(nUsuario).setLogged(true);
         			System.out.println("Login correcto");
         			estado.setText("Login correcto");
         			
@@ -187,7 +187,7 @@ public class LoginControlador{
         		
         		case "vendedor":
         			//Desde aqui abririamos la ventana de vendedor
-        			app.getVendedor(nUsuario);
+        			app.getVendedor(nUsuario).setLogged(true);
         			System.out.println("Login correcto");
         			estado.setText("Login correcto");
         			

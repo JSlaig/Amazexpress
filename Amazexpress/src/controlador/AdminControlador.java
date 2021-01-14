@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import modelo.AmazexpressApp;
@@ -24,10 +25,10 @@ public class AdminControlador {
     private AmazexpressApp app;
     
     @FXML
-    private Button crearAdmin;
+    private Pane mainUI;
     
     @FXML
-    private Pane mainUI;
+    private Label username;
     
     @FXML
     private Button cerrarSesion;
@@ -49,21 +50,37 @@ public class AdminControlador {
     	
     	app = AmazexpressApp.getSingletonInstancia();
     	
+    	//Label no se updatea
     	nUsuarios = new Label();
     	nUsuarios.setText(app.getUserNumber() + " usuarios");
     	
     	//Inicializaciones
-    	inicializarCrearAdminBoton();
     	inicializarCerrarSesion();
     	
     	inicializarBotonNavegacion();
     	
     	inicializarRingProgress();
+    	
+    	//Label no se updatea
+    	username = new Label(getUsername());    	
 
         assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'AdminUI.fxml'.";
     } 
     
-    private void inicializarRingProgress() {
+    private String getUsername() {
+		// TODO Auto-generated method stub
+		int i = 1;
+		String user = new String();
+		while(i < app.getAdmins().size()) {
+			if(app.getAdmins().get(i) != null && app.getAdmins().get(i).getLogged() == true) {
+			  user = app.getAdmins().get(i).getNUsuario();
+			}
+			i++;
+		}
+		return user;
+	}
+
+	private void inicializarRingProgress() {
 		// TODO Auto-generated method stub
     	float total = app.getUserNumber();
     
@@ -74,7 +91,6 @@ public class AdminControlador {
     	
     	float comp = app.getCompradores().size();      	
     	float result1 = comp / total * 100;
-    	System.out.println(comp + " / " + total + " * 100 = " + result1);
     	ring1.setProgress((int) result1);
     	
     	RingProgressIndicator ring2 = new RingProgressIndicator();
@@ -84,7 +100,6 @@ public class AdminControlador {
     	
     	float vend = app.getVendedores().size();
     	float result2 = vend / total * 100;
-    	System.out.println(vend + " / " + total + " * 100 = " + result2);
     	ring2.setProgress((int) result2);
     	
     	RingProgressIndicator ring3 = new RingProgressIndicator();
@@ -94,7 +109,6 @@ public class AdminControlador {
     	
     	float admin = app.getAdmins().size();
     	float result3 = admin / total * 100;
-    	System.out.println(admin + " / " + total + " * 100 = " + result3);
     	ring3.setProgress((int) result3);
     	
     	mainUI.getChildren().add(ring1);
@@ -107,6 +121,7 @@ public class AdminControlador {
 	    	cerrarSesion.setOnAction(new EventHandler<ActionEvent>() {
 	    	    @Override public void handle(ActionEvent e) {    	        
 						try {
+							app.getAdmin(getUsername()).setLogged(false);
 							cargarVentana("/vista/LoginUI.fxml"); 
 						} catch (IOException e1) {
 							// TODO Auto-generated catch block
@@ -151,20 +166,7 @@ public class AdminControlador {
  	    	    }
  	    	});
  	}
-    
-    @FXML
-	private void inicializarCrearAdminBoton() {
-	    	crearAdmin.setOnAction(new EventHandler<ActionEvent>() {
-	    	    @Override public void handle(ActionEvent e) {    	        
-						try {
-							cargarVentana("/vista/RegistroAdminUI.fxml");
-						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}					
-	    	    }
-	    	});
-	}
+
     
     private void cargarVentana(String ruta) throws IOException {
 		Parent ventana = FXMLLoader.load(getClass().getResource(ruta));

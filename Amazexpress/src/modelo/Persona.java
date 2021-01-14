@@ -16,6 +16,8 @@ public class Persona {
 	
 	private String telefono;
 	
+	private boolean logged;
+	
 	
 	//Constructor
 	
@@ -26,6 +28,7 @@ public class Persona {
 		this.nUsuario = nUsuario;
 		this.pass = pass;
 		this.telefono = telefono;
+		this.logged = false;
 	}
 	
 	
@@ -58,6 +61,10 @@ public class Persona {
 	public String getTelefono() {
 		return telefono;
 	}
+	
+	public boolean getLogged() {
+		return this.logged;
+	}
 
 
 	//Setters
@@ -88,4 +95,8 @@ public class Persona {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}	
+	
+	public void setLogged(boolean value) {
+		this.logged = value;
+	}
 }

@@ -16,6 +16,7 @@
 
 ListView{
 	-fx-background-color: #3B4148;
+	-fx-text-fill: #ADADAD;
 }
 
 .txtfield:focused{

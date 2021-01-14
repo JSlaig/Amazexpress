@@ -26,12 +26,12 @@
             </Pane>
             <Pane fx:id="mainUI" prefHeight="615.0" prefWidth="1040.0" styleClass="parent">
                <children>
-                  <Label layoutX="78.0" layoutY="82.0" prefHeight="45.0" prefWidth="657.0" styleClass="parent" text="La aplicacion actualmente cuenta con un total de " />
-                  <Label fx:id="nUsuarios" layoutX="735.0" layoutY="82.0" prefHeight="45.0" prefWidth="197.0" styleClass="parent" />
-                  <Label layoutX="82.0" layoutY="184.0" styleClass="parent" text="En total se han realizado" />
-                  <Label layoutX="418.0" layoutY="184.0" prefHeight="30.0" prefWidth="461.0" styleClass="parent" text="n pedidos." />
-                  <Label layoutX="82.0" layoutY="285.0" styleClass="parent" text="Se ha transferido un total de " />
-                  <Label layoutX="467.0" layoutY="285.0" prefHeight="30.0" prefWidth="461.0" styleClass="parent" text="n dinero." />
+                  <Label layoutX="77.0" layoutY="60.0" prefHeight="45.0" prefWidth="657.0" styleClass="parent" text="La aplicacion actualmente cuenta con un total de " />
+                  <Label fx:id="nUsuarios" layoutX="734.0" layoutY="60.0" prefHeight="45.0" prefWidth="197.0" styleClass="parent" />
+                  <Label layoutX="82.0" layoutY="162.0" styleClass="parent" text="En total se han realizado" />
+                  <Label layoutX="418.0" layoutY="162.0" prefHeight="30.0" prefWidth="461.0" styleClass="parent" text="n pedidos." />
+                  <Label layoutX="82.0" layoutY="263.0" styleClass="parent" text="Se ha transferido un total de " />
+                  <Label layoutX="467.0" layoutY="263.0" prefHeight="30.0" prefWidth="461.0" styleClass="parent" text="n dinero." />
                   <Separator prefHeight="3.0" prefWidth="1040.0" />
                   <Label layoutX="72.0" layoutY="533.0" styleClass="parent" text="Administradores" />
                   <Label layoutX="430.0" layoutY="533.0" styleClass="parent" text="Compradores" textAlignment="CENTER" />
@@ -158,14 +158,6 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="crearAdmin" mnemonicParsing="false" prefHeight="30.0" prefWidth="230.0" text="Crear Administrador">
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </VBox.margin>
-                  </Button>
                </children>
             </VBox>
             <Separator layoutX="10.0" layoutY="296.0" prefWidth="200.0" styleClass="parent" />
@@ -180,7 +172,7 @@
                      </HBox.margin></ImageView>
                   <VBox prefHeight="114.0" prefWidth="140.0">
                      <children>
-                        <Label prefHeight="49.0" prefWidth="120.0" styleClass="txtfield" text="Nombre Usuario" textAlignment="CENTER">
+                        <Label fx:id="username" prefHeight="49.0" prefWidth="120.0" styleClass="txtfield" text="Nombre Usuario" textAlignment="CENTER">
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>

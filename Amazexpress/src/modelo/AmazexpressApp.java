@@ -27,6 +27,8 @@ public class AmazexpressApp {
 		public HashMap<Integer, Comprador> getCompradores() {
 			return compradores;
 		}
+		
+		//Faltan hashmaps de tienda, producto y pedidos
 
 	//Instancia del objeto para singleton
 	private static AmazexpressApp app;
@@ -50,10 +52,8 @@ public class AmazexpressApp {
 		if(app == null) {
 			app = new AmazexpressApp();
 			app.importarBBDD();
-			System.out.println("Amazexpress ejecutado correctamente");
 		}else {
 			//do nothing
-			System.out.println("Instancia invocada");
 		}
 		
 		return app;
@@ -188,6 +188,30 @@ public class AmazexpressApp {
 		}
 	}
 
+	public void borrarAdmin(int id) {
+		Administrador borrable = admins.get(id);
+		
+		//Se usa borrable e id para borrarlo de la base de datos, luego se borra del hashmap
+		
+		admins.put(id, null);
+	}
+	
+	public void borrarComprador(int id) {
+		Comprador borrable = compradores.get(id);
+		
+		//Se usa borrable e id para borrarlo de la base de datos, luego se borra del hashmap
+		
+		compradores.put(id, null);
+	}
+	
+	public void borrarVendedor(int id) {
+		Vendedor borrable = vendedores.get(id);
+		
+		//Se usa borrable e id para borrarlo de la base de datos, luego se borra del hashmap
+		
+		vendedores.put(id, null);
+	}
+	
 	/**
 	 * Metodo que devuelve el objeto del usuario que ha iniciado sesion
 	 * @param nUsuario Nombre de usuario

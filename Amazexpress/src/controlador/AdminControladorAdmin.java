@@ -23,23 +23,22 @@ public class AdminControladorAdmin {
     @FXML
     private Label nUsuarios;
     
-    private AmazexpressApp app;
-    
-    @FXML
-    private Button crearAdmin;
+    private AmazexpressApp app;    
    
     @FXML
     private ListView<String> listView;
-
+    
     @FXML
-    private Button nuevoAdmin;
-
+    private Button crearAdmin;
 
     @FXML
     private Button editarAdmin;
 
     @FXML
     private Button borrarAdmin;
+    
+    @FXML
+    private Label errorLabel;
     
     @FXML
     private Button cerrarSesion;
@@ -58,12 +57,12 @@ public class AdminControladorAdmin {
     	
     	app = AmazexpressApp.getSingletonInstancia();
     	
-    	nUsuarios = new Label(app.getUserNumber() + " usuarios");
-    	//nUsuarios.setText();
-    	
     	//Inicializaciones
     	inicializarCrearAdminBoton();
     	inicializarCerrarSesion();
+    	
+    	inicializarBotonEditar();
+    	inicializarBotonBorrar();
     	
     	inicializarBotonNavegacion();
     	
@@ -72,7 +71,53 @@ public class AdminControladorAdmin {
         assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'AdminUI.fxml'.";
     } 
     
-    private void inicializarLista() {
+    
+    
+    private void inicializarBotonBorrar() {
+		// TODO Auto-generated method stub
+    	borrarAdmin.setOnAction(new EventHandler<ActionEvent>() {
+    	    @Override public void handle(ActionEvent e) {    	        
+					//Vista de borrado por hacer
+					String item = listView.getSelectionModel().getSelectedItem();
+					item = item.substring(0,1);
+					System.out.println(item);
+					int id = Integer.parseInt(item);
+					
+					if(id !=  1) {
+						app.borrarAdmin(id);
+					}else {
+						
+						//Label no se actualiza
+						errorLabel =  new Label();
+						errorLabel.setText("Error: No se puede eliminar al admin padre");
+					}
+					
+					try {
+						cargarVentana("/vista/AdminUI_admin.fxml");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+    	    }
+    	});
+	}
+
+	private void inicializarBotonEditar() {
+		// TODO Auto-generated method stub
+    	editarAdmin.setOnAction(new EventHandler<ActionEvent>() {
+    	    @Override public void handle(ActionEvent e) {    	        
+					try {
+						//Vista de edicion por hacer
+						cargarVentana("/vista/LoginUI.fxml");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}					
+    	    }
+    	});
+	}
+
+	private void inicializarLista() {
 		// TODO Auto-generated method stub
     	listView = new ListView<>();
     	
@@ -81,7 +126,7 @@ public class AdminControladorAdmin {
     	listView.setLayoutY(183);
     	listView.setPrefSize(977, 506);
     	
-    	//listView.setStyle("/vista/applicacion.css");
+    	listView.setStyle("-fx-control-inner-background: #3B4148; -fx-text-fill: #ADADAD;");
     	
     	int i = 1;
     	while(i <= app.getAdmins().size()) {
@@ -94,12 +139,26 @@ public class AdminControladorAdmin {
     	}
     root.getChildren().addAll(listView);
     }
+	
+	private String getUsername() {
+		// TODO Auto-generated method stub
+		int i = 1;
+		String user = new String();
+		while(i < app.getAdmins().size()) {
+			if(app.getAdmins().get(i) != null && app.getAdmins().get(i).getLogged() == true) {
+			  user = app.getAdmins().get(i).getNUsuario();
+			}
+			i++;
+		}
+		return user;
+	}
 
 	@FXML
 	private void inicializarCerrarSesion() {
 	    	cerrarSesion.setOnAction(new EventHandler<ActionEvent>() {
 	    	    @Override public void handle(ActionEvent e) {    	        
 						try {
+							app.getAdmin(getUsername()).setLogged(false);
 							cargarVentana("/vista/LoginUI.fxml");
 						} catch (IOException e1) {
 							// TODO Auto-generated catch block

@@ -29,8 +29,8 @@
                   <Separator prefHeight="3.0" prefWidth="1040.0" />
                   <Button fx:id="borrarAdmin" layoutX="931.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Borrar" />
                   <Button fx:id="editarAdmin" layoutX="823.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Editar" />
-                  <Button fx:id="nuevoAdmin" layoutX="719.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Nuevo" />
-                  <ListView fx:id="listView" layoutX="34.0" layoutY="77.0" prefHeight="506.0" prefWidth="977.0" />
+                  <Button fx:id="crearAdmin" layoutX="719.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Nuevo" />
+                  <Label fx:id="errorLabel" layoutX="179.0" layoutY="26.0" prefHeight="45.0" prefWidth="443.0" text="Label" />
                </children>
             </Pane>
          </children>
@@ -153,14 +153,6 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="crearAdmin" mnemonicParsing="false" prefHeight="30.0" prefWidth="230.0" text="Crear Administrador">
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </VBox.margin>
-                  </Button>
                </children>
             </VBox>
             <Separator layoutX="10.0" layoutY="296.0" prefWidth="200.0" styleClass="parent" />
