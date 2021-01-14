@@ -65,14 +65,16 @@ public class AdminControlador {
     
     private void inicializarRingProgress() {
 		// TODO Auto-generated method stub
-		
+    	float total = app.getUserNumber();
+    
     	RingProgressIndicator ring1 = new RingProgressIndicator();
     	ring1.setRingWidth(70);
     	ring1.setLayoutX(430);
     	ring1.setLayoutY(350);
     	
-    	float result1 = app.getCompradores().size() / app.getUserNumber() * 100;
-    	System.out.println(app.getCompradores().size() + " / " + app.getUserNumber() + " * 100 = " + result1);
+    	float comp = app.getCompradores().size();      	
+    	float result1 = comp / total * 100;
+    	System.out.println(comp + " / " + total + " * 100 = " + result1);
     	ring1.setProgress((int) result1);
     	
     	RingProgressIndicator ring2 = new RingProgressIndicator();
@@ -80,8 +82,9 @@ public class AdminControlador {
     	ring2.setLayoutX(770);
     	ring2.setLayoutY(350);
     	
-    	float result2 = app.getVendedores().size() / app.getUserNumber() * 100;
-    	System.out.println(app.getVendedores().size() + " / " + app.getUserNumber() + " * 100 = " + result2);
+    	float vend = app.getVendedores().size();
+    	float result2 = vend / total * 100;
+    	System.out.println(vend + " / " + total + " * 100 = " + result2);
     	ring2.setProgress((int) result2);
     	
     	RingProgressIndicator ring3 = new RingProgressIndicator();
@@ -89,8 +92,9 @@ public class AdminControlador {
     	ring3.setLayoutX(90);
     	ring3.setLayoutY(350);
     	
-    	float result3 = app.getAdmins().size() / app.getUserNumber() * 100;
-    	System.out.println(app.getAdmins().size() + " / " + app.getUserNumber() + " * 100 = " + result3);
+    	float admin = app.getAdmins().size();
+    	float result3 = admin / total * 100;
+    	System.out.println(admin + " / " + total + " * 100 = " + result3);
     	ring3.setProgress((int) result3);
     	
     	mainUI.getChildren().add(ring1);

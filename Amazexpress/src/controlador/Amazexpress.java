@@ -25,13 +25,13 @@ public class Amazexpress extends Application {
 			Scene scene = new Scene(ventana);
 			primaryStage.setScene(scene);
 			
-			Image img = new Image(getClass().getResource("/amazexpress_logo_2.png").toExternalForm());
+			Image img = new Image(getClass().getResource("/amazexpress_logo_main.png").toExternalForm());
 			primaryStage.getIcons().add(img);
 			
 			primaryStage.setTitle("Amazexpress");
 			this.stage = primaryStage;
 			
-			primaryStage.show();
+			primaryStage.show(); 
 			
 		}catch(IOException e) {
 			e.printStackTrace();

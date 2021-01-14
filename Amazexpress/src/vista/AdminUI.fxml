@@ -26,16 +26,16 @@
             </Pane>
             <Pane fx:id="mainUI" prefHeight="615.0" prefWidth="1040.0" styleClass="parent">
                <children>
-                  <Label layoutX="78.0" layoutY="82.0" styleClass="parent" text="La aplicacion actualmente cuenta con un total de " />
-                  <Label fx:id="nUsuarios" layoutX="520.0" layoutY="82.0" prefHeight="30.0" prefWidth="461.0" styleClass="parent" text="n usuarios." />
+                  <Label layoutX="78.0" layoutY="82.0" prefHeight="45.0" prefWidth="657.0" styleClass="parent" text="La aplicacion actualmente cuenta con un total de " />
+                  <Label fx:id="nUsuarios" layoutX="735.0" layoutY="82.0" prefHeight="45.0" prefWidth="197.0" styleClass="parent" />
                   <Label layoutX="82.0" layoutY="184.0" styleClass="parent" text="En total se han realizado" />
                   <Label layoutX="418.0" layoutY="184.0" prefHeight="30.0" prefWidth="461.0" styleClass="parent" text="n pedidos." />
                   <Label layoutX="82.0" layoutY="285.0" styleClass="parent" text="Se ha transferido un total de " />
                   <Label layoutX="467.0" layoutY="285.0" prefHeight="30.0" prefWidth="461.0" styleClass="parent" text="n dinero." />
                   <Separator prefHeight="3.0" prefWidth="1040.0" />
-                  <Label layoutX="90.0" layoutY="533.0" styleClass="parent" text="Administradores" />
-                  <Label layoutX="430.0" layoutY="533.0" styleClass="parent" text="Compradores" />
-                  <Label layoutX="769.0" layoutY="533.0" styleClass="parent" text="Vendedores" />
+                  <Label layoutX="72.0" layoutY="533.0" styleClass="parent" text="Administradores" />
+                  <Label layoutX="430.0" layoutY="533.0" styleClass="parent" text="Compradores" textAlignment="CENTER" />
+                  <Label layoutX="778.0" layoutY="533.0" styleClass="parent" text="Vendedores" textAlignment="CENTER" />
                </children>
             </Pane>
          </children>

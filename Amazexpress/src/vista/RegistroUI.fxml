@@ -19,7 +19,7 @@
       <Button fx:id="registro" layoutX="850.0" layoutY="591.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="255.0" text="REGISTRO" />
       <Button fx:id="cancelar" layoutX="220.0" layoutY="591.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="255.0" text="CANCELAR" />
       <Label fx:id="estado" contentDisplay="CENTER" layoutX="454.0" layoutY="535.0" prefHeight="17.0" prefWidth="373.0" styleClass="parent" textAlignment="CENTER" textFill="RED" textOverrun="CLIP" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="540.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="206.0" fitWidth="388.0" layoutX="476.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Resources/amazexpress_logo.png" />
          </image>

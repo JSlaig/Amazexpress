@@ -9,8 +9,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.AnchorPane;
 import modelo.AmazexpressApp;
+import modelo.Administrador;
 
 public class AdminControladorAdmin {
 
@@ -24,6 +27,19 @@ public class AdminControladorAdmin {
     
     @FXML
     private Button crearAdmin;
+   
+    @FXML
+    private ListView<String> listView;
+
+    @FXML
+    private Button nuevoAdmin;
+
+
+    @FXML
+    private Button editarAdmin;
+
+    @FXML
+    private Button borrarAdmin;
     
     @FXML
     private Button cerrarSesion;
@@ -50,11 +66,36 @@ public class AdminControladorAdmin {
     	inicializarCerrarSesion();
     	
     	inicializarBotonNavegacion();
+    	
+    	inicializarLista();
 
         assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'AdminUI.fxml'.";
     } 
     
-    @FXML
+    private void inicializarLista() {
+		// TODO Auto-generated method stub
+    	listView = new ListView<>();
+    	
+    	//Sizes
+    	listView.setLayoutX(275);
+    	listView.setLayoutY(183);
+    	listView.setPrefSize(977, 506);
+    	
+    	//listView.setStyle("/vista/applicacion.css");
+    	
+    	int i = 1;
+    	while(i <= app.getAdmins().size()) {
+    		if(app.getAdmins().get(i) != null) {		    	
+		    	String view = app.getAdmins().get(i).getIdAdministrador() + " | " + app.getAdmins().get(i).getNombre() + " | " + app.getAdmins().get(i).getApellidos() + " | " +  app.getAdmins().get(i).getApellidos() + " | " + app.getAdmins().get(i).getNUsuario() + " | " + app.getAdmins().get(i).getEmail() + " | " + app.getAdmins().get(i).getTelefono();	    			
+				listView.getItems().add(view);		
+				listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+    		}
+    		i++;
+    	}
+    root.getChildren().addAll(listView);
+    }
+
+	@FXML
 	private void inicializarCerrarSesion() {
 	    	cerrarSesion.setOnAction(new EventHandler<ActionEvent>() {
 	    	    @Override public void handle(ActionEvent e) {    	        

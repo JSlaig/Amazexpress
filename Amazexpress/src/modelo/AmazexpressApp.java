@@ -16,7 +16,7 @@ public class AmazexpressApp {
 		//Lista de compradores
 		private HashMap<Integer, Comprador> compradores;
 		
-	public HashMap<Integer, Administrador> getAdmins() {
+		public HashMap<Integer, Administrador> getAdmins() {
 			return admins;
 		}
 
@@ -64,6 +64,7 @@ public class AmazexpressApp {
 	 */
 	public void importarBBDD() {
 		//Por implementar
+		app.registro("admin", "admin", "admin", "admin", "admin", "admin", "admin");
 	}
 	
 	
@@ -134,7 +135,7 @@ public class AmazexpressApp {
 	public boolean login(String tipo, String nUsuario, String pass) {
 		
 		if(tipo == "admin") {
-			
+			 
 			int i = 1;
 			
 			if(admins.get(i) == null) return false;

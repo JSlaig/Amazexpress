@@ -121,12 +121,11 @@ public class RegistroControlador{
     	
     	if(this.tipo.getValue().toString() != null) tipoCampo = this.tipo.getValue().toString();
     	else {
-    		tipoCampo = "";
+    		tipoCampo = ""; 
     			}
 		
 		app.registro(tipoCampo, nombre.getText(), apellidos.getText(), email.getText(), nUsuario.getText(), pass.getText(), telefono.getText());
 		
-		System.out.println("Registro correcto");
 		estado.setText("Registro correcto");
 		
 		try {

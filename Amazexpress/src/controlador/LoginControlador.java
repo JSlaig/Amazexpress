@@ -84,9 +84,7 @@ public class LoginControlador{
 
     private void inicializar() {
     	
-    	this.app = AmazexpressApp.getSingletonInstancia();
-    	
-    	app.registro("admin", "", "", "", "admin", "admin", "");
+    	this.app = AmazexpressApp.getSingletonInstancia();    	
     	
     	inicializarChoiceBox();
     	
@@ -139,8 +137,7 @@ public class LoginControlador{
     }
     
     @FXML
-    void registro(ActionEvent event) throws IOException {    	
-    	
+    void registro(ActionEvent event) throws IOException {     	
     	cargarVentana("/vista/RegistroUI.fxml");
     }
     

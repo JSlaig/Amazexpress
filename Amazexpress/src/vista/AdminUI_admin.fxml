@@ -27,6 +27,10 @@
             <Pane prefHeight="615.0" prefWidth="1040.0" styleClass="parent">
                <children>
                   <Separator prefHeight="3.0" prefWidth="1040.0" />
+                  <Button fx:id="borrarAdmin" layoutX="931.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Borrar" />
+                  <Button fx:id="editarAdmin" layoutX="823.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Editar" />
+                  <Button fx:id="nuevoAdmin" layoutX="719.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Nuevo" />
+                  <ListView fx:id="listView" layoutX="34.0" layoutY="77.0" prefHeight="506.0" prefWidth="977.0" />
                </children>
             </Pane>
          </children>
