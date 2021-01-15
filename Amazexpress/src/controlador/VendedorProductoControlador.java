@@ -13,7 +13,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import modelo.AmazexpressApp;
+import modelo.Producto;
 import modelo.Vendedor;
 
 public class VendedorProductoControlador {
@@ -48,6 +50,12 @@ public class VendedorProductoControlador {
 
 	 @FXML
 	 private Button mensajesBoton;
+	 
+	 @FXML
+	 private Pane pane;
+	 
+	 @FXML
+	 private ListView<String> listView;
 
 	 @FXML
 	 private Button balanceBoton;
@@ -113,8 +121,8 @@ public class VendedorProductoControlador {
 		
 		mensajesBoton.setOnAction(new EventHandler<ActionEvent>() {
     	    @Override public void handle(ActionEvent e) {    	        
-					try {
-						//app.getAdmin(getUsername()).setLogged(false);
+				try {
+					// app.getAdmin(getUsername()).setLogged(false);
 						cargarVentana("/vista/VendedorMensajesUI.fxml"); 
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -156,7 +164,8 @@ public class VendedorProductoControlador {
     
     private void inicializarLista() {
 		// TODO Auto-generated method stub
-    	ListView<String> listView = new ListView<String>();
+    	pane = new Pane();
+    	listView = new ListView<>();
     	
     	//Sizes
     	listView.setLayoutX(275);
@@ -165,18 +174,11 @@ public class VendedorProductoControlador {
     	
     	listView.setStyle("-fx-control-inner-background: #3B4148; -fx-text-fill: #ADADAD;");
     	
-    	int i = 1;
-    	
-    	while(this.vendedor.getProductos().size() > i) {
-    		
-    		if(this.vendedor.getProductos().get(i) != null) {
-    			String view = this.vendedor.getProductos().get(i).getIdProducto() + " | " + this.vendedor.getProductos().get(i).getNombre() + " | " + this.vendedor.getProductos().get(i).getDescripcion() + " | " + this.vendedor.getProductos().get(i).getStock() + " | " + this.vendedor.getProductos().get(i).getPrecio() + " | " + this.vendedor.getProductos().get(i).getVendedor();
+    	for(Producto aux : this.vendedor.getProductos()) {    		
+    			String view = aux.getIdProducto() + " | " + aux.getNombre() + " | " + aux.getDescripcion() + " | " + aux.getStock() + " | " + aux.getPrecio() + " | " + aux.getVendedor();
     			listView.getItems().add(view);
-    		}
-    		
-    		i++;
     	}
     	
-    root.getChildren().addAll(listView);    
+    pane.getChildren().addAll(listView);    
     }
 }

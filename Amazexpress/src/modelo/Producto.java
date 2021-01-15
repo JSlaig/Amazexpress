@@ -9,16 +9,16 @@ public class Producto {
 	private String descripcion;
 	private double precio;
 	private int stock;
-	
+
 //Constructor
 	public Producto(String nombre, String descripcion, String vendedor, double precio, int stock) {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.vendedor = vendedor;
 		this.setPrecio(precio);
-		if(stock >= 0) {
+		if (stock >= 0) {
 			this.setStock(stock);
-		}else {
+		} else {
 			this.setStock(0);
 		}
 	}
@@ -27,19 +27,19 @@ public class Producto {
 	public int getIdProducto() {
 		return this.idProducto;
 	}
-	
-    public String getNombre() {
 
-        return this.nombre;
-    }
-    
-    public String getDescripcion(){
-        return this.descripcion;
-    }
+	public String getNombre() {
 
-    public String getVendedor(){
-        return this.vendedor;
-    }
+		return this.nombre;
+	}
+
+	public String getDescripcion() {
+		return this.descripcion;
+	}
+
+	public String getVendedor() {
+		return this.vendedor;
+	}
 
 	public double getPrecio() {
 		return precio;

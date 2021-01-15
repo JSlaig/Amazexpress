@@ -29,11 +29,12 @@
                   </Button>
                </children>
             </VBox>
-            <Pane layoutX="228.0" prefHeight="620.0" prefWidth="1052.0">
+            <Pane fx:id="pane" layoutX="228.0" prefHeight="620.0" prefWidth="1052.0">
                <children>
                   <Button fx:id="crearProducto" layoutX="733.0" layoutY="23.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Nuevo" />
                   <Button fx:id="editarProducto" layoutX="837.0" layoutY="23.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Editar" />
                   <Button fx:id="borrarProducto" layoutX="945.0" layoutY="23.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Borrar" />
+                  <ListView fx:id="listView" layoutX="31.0" layoutY="85.0" prefHeight="502.0" prefWidth="994.0" />
                </children>
             </Pane>
          </children>
