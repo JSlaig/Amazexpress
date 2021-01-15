@@ -9,12 +9,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import modelo.Administrador;
 import modelo.AmazexpressApp;
 
 public class AdminControlador {
+	
+	private Administrador admin;
 
 	@FXML
 	private AnchorPane root;
@@ -49,6 +51,8 @@ public class AdminControlador {
 	void initialize() {
 
 		app = AmazexpressApp.getSingletonInstancia();
+		
+		admin = app.getLoggedAdmin();
 
 		// Label no se updatea
 		nUsuarios = new Label();
@@ -60,24 +64,6 @@ public class AdminControlador {
 		inicializarBotonNavegacion();
 
 		inicializarRingProgress();
-
-		// Label no se updatea
-		username = new Label(getUsername());
-
-		assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'AdminUI.fxml'.";
-	}
-
-	private String getUsername() {
-		// TODO Auto-generated method stub
-		int i = 1;
-		String user = new String();
-		while (i < app.getAdmins().size()) {
-			if (app.getAdmins().get(i) != null && app.getAdmins().get(i).getLogged() == true) {
-				user = app.getAdmins().get(i).getNUsuario();
-			}
-			i++;
-		}
-		return user;
 	}
 
 	private void inicializarRingProgress() {
@@ -122,7 +108,7 @@ public class AdminControlador {
 			@Override
 			public void handle(ActionEvent e) {
 				try {
-					// app.getAdmin(getUsername()).setLogged(false);
+					admin.setLogged(false);
 					cargarVentana("/vista/LoginUI.fxml");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block

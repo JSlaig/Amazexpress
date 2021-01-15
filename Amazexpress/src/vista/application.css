@@ -36,6 +36,15 @@ TextArea .content{
 	-fx-font-size: 14px;
 }
 
+.productoTxtArea .content{
+	-fx-background-color: #3B4148;	
+	-fx-text-fill: #FFFFFF;
+	-fx-highlight-text-fill: #ffffff;
+	-fx-highlight-fill: #ffffff;
+	-fx-display-caret:true;
+	-fx-font-size: 14px;
+}
+
 Button{
 	-fx-background-color: #EA4C88;
 	-fx-text-fill: #FFFFFF;

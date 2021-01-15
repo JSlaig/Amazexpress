@@ -14,7 +14,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import modelo.AmazexpressApp;
@@ -22,6 +21,8 @@ import modelo.Administrador;
 import modelo.Amazexpress;
 
 public class AdminControladorAdmin {
+	
+	private Administrador admin;
 
 	@FXML
 	private AnchorPane root;
@@ -62,6 +63,8 @@ public class AdminControladorAdmin {
 	void initialize() {
 
 		app = AmazexpressApp.getSingletonInstancia();
+		
+		admin = app.getLoggedAdmin();
 
 		// Inicializaciones
 		inicializarCrearAdminBoton();
@@ -118,10 +121,7 @@ public class AdminControladorAdmin {
 						String item = listView.getSelectionModel().getSelectedItem();
 						item = item.substring(0, 1);
 						System.out.println(item);
-						Integer.parseInt(item);
-
-						// EditControlador.setTipo("admin");
-						// EditControlador.setId(idEdit);
+						Integer.parseInt(item);						
 
 						// Cargamos nueva ventana
 						FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/EditUI.fxml"));
@@ -138,7 +138,7 @@ public class AdminControladorAdmin {
 						secondaryStage.setTitle("Edit");
 						secondaryStage.setScene(new Scene(ventana));
 
-						secondaryStage.show();
+						secondaryStage.show(); 
 
 					}
 				} catch (IOException e1) {
@@ -175,7 +175,7 @@ public class AdminControladorAdmin {
 			@Override
 			public void handle(ActionEvent e) {
 				try {
-					// app.getAdmin(getUsername()).setLogged(false);
+					admin.setLogged(false);
 					cargarVentana("/vista/LoginUI.fxml");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block

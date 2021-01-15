@@ -21,6 +21,9 @@ public class AmazexpressApp {
 
 	// Lista de compradores
 	private List<Comprador> compradores;
+	
+	//Lista de productos
+	private List<Producto> productos;
 
 	public List<Administrador> getAdmins() {
 		return admins;
@@ -32,6 +35,10 @@ public class AmazexpressApp {
 
 	public List<Comprador> getCompradores() {
 		return compradores;
+	}	
+
+	public List<Producto> getProductos() {
+		return productos;
 	}
 
 	// Faltan hashmaps de tienda, producto y pedidos
@@ -46,6 +53,7 @@ public class AmazexpressApp {
 		this.admins = new ArrayList<Administrador>();
 		this.vendedores = new ArrayList<Vendedor>();
 		this.compradores = new ArrayList<Comprador>();
+		this.productos = new ArrayList<Producto>();
 	}
 
 	/**
@@ -470,4 +478,5 @@ public class AmazexpressApp {
 	public int getUserNumber() {
 		return this.compradores.size() + this.vendedores.size() + this.admins.size();
 	}
+
 }

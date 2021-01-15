@@ -12,9 +12,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.AnchorPane;
+import modelo.Administrador;
 import modelo.AmazexpressApp;
 
 public class AdminControladorVendedor {
+	
+	private Administrador admin;
 
 	@FXML
 	private AnchorPane root;
@@ -49,6 +52,8 @@ public class AdminControladorVendedor {
 	void initialize() {
 
 		app = AmazexpressApp.getSingletonInstancia();
+		
+		admin = app.getLoggedAdmin();
 
 		// Inicializaciones
 
@@ -113,26 +118,13 @@ public class AdminControladorVendedor {
 		});
 	}
 
-	private String getUsername() {
-		// TODO Auto-generated method stub
-		int i = 1;
-		String user = new String();
-		while (i < app.getAdmins().size()) {
-			if (app.getAdmins().get(i) != null && app.getAdmins().get(i).getLogged() == true) {
-				user = app.getAdmins().get(i).getNUsuario();
-			}
-			i++;
-		}
-		return user;
-	}
-
 	@FXML
 	private void inicializarCerrarSesion() {
 		cerrarSesion.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				try {
-					// app.getAdmin(getUsername()).setLogged(false);
+					admin.setLogged(false);
 					cargarVentana("/vista/LoginUI.fxml");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block

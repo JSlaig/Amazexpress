@@ -9,7 +9,7 @@ public class Vendedor extends Persona {
 	// Atributos de vendedor
 	private int idVendedor;
 	private double balance;
-
+	
 	private List<Producto> productos;
 
 	// Constructor con los param de la superclase
@@ -21,8 +21,8 @@ public class Vendedor extends Persona {
 
 		this.idVendedor = idVendedor;
 		this.balance = balance;
-
-		productos = new ArrayList<Producto>();
+		
+		this.productos =  new ArrayList<Producto>();
 	}
 
 	// Getters
