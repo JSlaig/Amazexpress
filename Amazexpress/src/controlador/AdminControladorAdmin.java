@@ -147,7 +147,6 @@ public class AdminControladorAdmin {
 	}
 
 	private void inicializarLista() {
-		// TODO Auto-generated method stub
     	listView = new ListView<>();
     	
     	//Sizes
@@ -157,30 +156,13 @@ public class AdminControladorAdmin {
     	
     	listView.setStyle("-fx-control-inner-background: #3B4148; -fx-text-fill: #ADADAD;");
     	
-    	int i = 1;
-    	while(i <= app.getAdmins().size()) {
-    		if(app.getAdmins().get(i) != null) {		    	
-		    	String view = app.getAdmins().get(i).getIdAdministrador() + " | " + app.getAdmins().get(i).getNombre() + " | " + app.getAdmins().get(i).getApellidos() + " | " +  app.getAdmins().get(i).getApellidos() + " | " + app.getAdmins().get(i).getNUsuario() + " | " + app.getAdmins().get(i).getEmail() + " | " + app.getAdmins().get(i).getTelefono();	    			
+    	for(Administrador aux : app.getAdmins()) {	    	
+		    	String view = aux.getIdAdministrador() + " | " + aux.getNombre() + " | " + aux.getApellidos() + " | " +  aux.getApellidos() + " | " + aux.getNUsuario() + " | " + aux.getEmail() + " | " + aux.getTelefono();	    			
 				listView.getItems().add(view);		
 				listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-    		}
-    		i++;
-    	}
+    		}   	
     root.getChildren().addAll(listView);
     }
-
-	private String getUsername() {
-		// TODO Auto-generated method stub
-		int i = 1;
-		String user = new String();
-		while(i < app.getAdmins().size()) {
-			if(app.getAdmins().get(i) != null && app.getAdmins().get(i).getLogged() == true) {
-			  user = app.getAdmins().get(i).getNUsuario();
-			}
-			i++;
-		}
-		return user;
-	}
 
 	@FXML
 	private void inicializarCerrarSesion() {
