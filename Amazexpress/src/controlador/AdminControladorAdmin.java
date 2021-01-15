@@ -7,11 +7,16 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import modelo.AmazexpressApp;
 import modelo.Administrador;
 
@@ -52,6 +57,8 @@ public class AdminControladorAdmin {
     @FXML
     private Button compradoresBoton;
     
+    private int idEdit;
+    
     @FXML
     void initialize() {
     	
@@ -70,8 +77,6 @@ public class AdminControladorAdmin {
 
         assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'AdminUI.fxml'.";
     } 
-    
-    
     
     private void inicializarBotonBorrar() {
 		// TODO Auto-generated method stub
@@ -107,8 +112,28 @@ public class AdminControladorAdmin {
     	editarAdmin.setOnAction(new EventHandler<ActionEvent>() {
     	    @Override public void handle(ActionEvent e) {    	        
 					try {
-						//Vista de edicion por hacer
-						cargarVentana("/vista/LoginUI.fxml");
+						//Sacamos el id del admin
+						String item = listView.getSelectionModel().getSelectedItem();
+						item = item.substring(0,1);
+						System.out.println(item);
+						idEdit = Integer.parseInt(item);
+						
+						//Cargamos nueva ventana
+						FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/EditUI.fxml"));
+			
+						Parent ventana = (Parent) loader.load();
+						
+						Stage secondaryStage = new Stage();	
+						
+						secondaryStage.initOwner(Amazexpress.stage);
+						secondaryStage.initModality(Modality.APPLICATION_MODAL);
+						
+						Image img = new Image(getClass().getResource("/amazexpress_logo_main.png").toExternalForm());
+						secondaryStage.getIcons().add(img);						
+						secondaryStage.setTitle("Edit");
+						secondaryStage.setScene(new Scene(ventana));
+						
+						secondaryStage.show(); 
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

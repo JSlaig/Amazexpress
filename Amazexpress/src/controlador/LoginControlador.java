@@ -133,7 +133,6 @@ public class LoginControlador{
     	list.addAll(tipos[0], tipos[1], tipos[2]);
     	
     	tipoCampo.getItems().addAll(list);
-    	tipoCampo.setValue("tipo de cuenta"); 
     }
     
     @FXML
@@ -168,7 +167,7 @@ public class LoginControlador{
         		case "admin":	    			
         			//Desde aqui abririamos la ventana de admin
         			app.getAdmin(nUsuario).setLogged(true);
-        			System.out.println("Login correcto");
+        		
         			estado.setText("Login correcto");
         			
         			cargarVentana("/vista/AdminUI.fxml");
@@ -178,7 +177,7 @@ public class LoginControlador{
         		case "comprador":
         			//Desde aqui abririamos la ventana de comprador
         			app.getComprador(nUsuario).setLogged(true);
-        			System.out.println("Login correcto");
+        			
         			estado.setText("Login correcto");
         			
         			cargarVentana("/vista/CompradorUI.fxml");
@@ -188,7 +187,7 @@ public class LoginControlador{
         		case "vendedor":
         			//Desde aqui abririamos la ventana de vendedor
         			app.getVendedor(nUsuario).setLogged(true);
-        			System.out.println("Login correcto");
+        			
         			estado.setText("Login correcto");
         			
         			cargarVentana("/vista/VendedorUI.fxml");
