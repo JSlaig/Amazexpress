@@ -67,7 +67,7 @@ public class AmazexpressApp {
 
 		if (app == null) {
 			app = new AmazexpressApp();
-			// app.importarBBDD();
+			app.importarBBDD();
 		} else {
 			// do nothing
 		}
@@ -155,7 +155,7 @@ public class AmazexpressApp {
 			try {
 
 				if (rs != null)
-					rs.close();
+					rs.close(); 
 				if (stm != null)
 					stm.close();
 				if (cn != null)
@@ -426,7 +426,21 @@ public class AmazexpressApp {
 				removable = aux;
 		}
 		if (removable != null)
-			productos.remove(removable);		
+			productos.remove(removable);	
+		
+		Conexion conexion = new Conexion();
+		Connection cn = null;
+		Statement stm = null;
+
+		int idProducto = id;
+		try {
+			cn = conexion.conectar();
+			stm = cn.createStatement();
+			stm.executeUpdate("DELETE FROM amazexpressbbdd.producto WHERE idProducto = '" + idProducto+ "'");
+			System.out.println("Producto borrado");
+		} catch (SQLException e) {
+
+		}
 	}
 
 	/**

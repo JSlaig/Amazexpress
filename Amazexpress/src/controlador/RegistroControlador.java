@@ -130,7 +130,7 @@ public class RegistroControlador {
 		
 		estado.setText("Registro correcto");
 		
-		/*if(tipoCampo.equals("admin")) {
+		if(tipoCampo.equals("admin")) {
 			Conexion conexion = new Conexion();
 			Connection cn = null;
 	        Statement stm = null;
@@ -200,7 +200,7 @@ public class RegistroControlador {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}        
-		*/
+		
 		cargarVentana("/vista/LoginUI.fxml");
 	}
 
