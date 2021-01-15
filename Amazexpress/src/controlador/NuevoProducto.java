@@ -47,7 +47,7 @@ public class NuevoProducto {
 		 
 		vendedor = app.getLoggedVendedor();
 		
-		cancelar.setOnAction(new EventHandler<ActionEvent>() {		
+		cancelar.setOnAction(new EventHandler<ActionEvent>() {		 
 
 			@Override
 			public void handle(ActionEvent e) {
@@ -65,7 +65,7 @@ public class NuevoProducto {
 			public void handle(ActionEvent e) {
 				try {
 					app = AmazexpressApp.getSingletonInstancia();
-					Producto producto = new Producto(nombre.getText(), descripcion.getText(),
+					Producto producto = new Producto(app.getProductos().size() + 1, nombre.getText(), descripcion.getText(),
 							app.getLoggedVendedor().getNUsuario(), Double.valueOf(precio.getText()),
 							Integer.valueOf(stock.getText()));
 					app.getProductos().add(producto);

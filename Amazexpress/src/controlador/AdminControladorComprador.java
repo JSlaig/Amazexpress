@@ -16,7 +16,7 @@ import modelo.Administrador;
 import modelo.AmazexpressApp;
 
 public class AdminControladorComprador {
-	
+
 	private Administrador admin;
 
 	@FXML
@@ -52,7 +52,7 @@ public class AdminControladorComprador {
 	void initialize() {
 
 		app = AmazexpressApp.getSingletonInstancia();
-		
+
 		admin = app.getLoggedAdmin();
 
 		// Inicializaciones

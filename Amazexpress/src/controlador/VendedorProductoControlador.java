@@ -88,7 +88,7 @@ public class VendedorProductoControlador {
 			@Override
 			public void handle(ActionEvent e) {
 				try {
-					// app.getAdmin(getUsername()).setLogged(false);
+					vendedor.setLogged(false);
 					cargarVentana("/vista/LoginUI.fxml");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
@@ -115,7 +115,7 @@ public class VendedorProductoControlador {
 			public void handle(ActionEvent e) {
 				try {
 					// app.getAdmin(getUsername()).setLogged(false);
-					cargarVentana("/vista/VendedorPerfil.fxml");
+					cargarVentana("/vista/VendedorPerfil.fxml"); 
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -162,7 +162,7 @@ public class VendedorProductoControlador {
 			}
 		});
 
-	crearProducto.setOnAction(new EventHandler<ActionEvent>() {
+		crearProducto.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				try {
@@ -172,6 +172,18 @@ public class VendedorProductoControlador {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+			}
+		});
+		
+		borrarProducto.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				String idEliminar = listView.getSelectionModel().getSelectedItem(); 
+				
+				idEliminar = idEliminar.substring(0,1);
+				
+				app.borrarProducto(Integer.valueOf(idEliminar));
+				vendedor.borrarProducto(Integer.valueOf(idEliminar));
 			}
 		});
 	}
@@ -198,7 +210,7 @@ public class VendedorProductoControlador {
 						+ aux.getStock() + " | " + aux.getPrecio() + " | " + aux.getVendedor();
 				System.out.println(view);
 				listView.getItems().add(view);
-				listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+				listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE); 
 			}
 		}else {
 			String view = "No hay productos";

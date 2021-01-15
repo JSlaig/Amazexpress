@@ -92,7 +92,6 @@ public class EditControlador {
 		telefono.setPrefSize(175, 30);
 
 		if (tipo.equals("admin")) {
-
 			nombre.setText(app.getAdmins().get(id).getNombre());
 			apellidos.setText(app.getAdmins().get(id).getApellidos());
 			nUsuario.setText(app.getAdmins().get(id).getNUsuario());
@@ -139,6 +138,8 @@ public class EditControlador {
 
 	private void inicializarActualizar() {
 		// TODO Auto-generated method stub
+		
+		
 
 	}
 

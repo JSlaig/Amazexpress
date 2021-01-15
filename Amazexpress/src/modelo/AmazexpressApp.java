@@ -418,6 +418,16 @@ public class AmazexpressApp {
 		if (removable != null)
 			vendedores.remove(removable);
 	}
+	
+	public void borrarProducto(int id) {
+		Producto removable = null;
+		for (Producto aux : productos) {
+			if (aux.getIdProducto() == id)
+				removable = aux;
+		}
+		if (removable != null)
+			productos.remove(removable);		
+	}
 
 	/**
 	 * Metodo que devuelve el objeto del usuario que ha iniciado sesion
@@ -477,6 +487,6 @@ public class AmazexpressApp {
 	 */
 	public int getUserNumber() {
 		return this.compradores.size() + this.vendedores.size() + this.admins.size();
-	}
+	}	
 
 }

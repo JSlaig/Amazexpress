@@ -11,8 +11,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import modelo.AmazexpressApp;
+import modelo.Vendedor;
 
 public class VendedorPerfilControlador {
+
+	private AmazexpressApp app;
+
+	private Vendedor vendedor;
 
 	@FXML
 	private ResourceBundle resources;
@@ -46,6 +52,9 @@ public class VendedorPerfilControlador {
 
 	@FXML
 	void initialize() {
+		app = AmazexpressApp.getSingletonInstancia();
+
+		this.vendedor = app.getLoggedVendedor();
 
 		inicializarBotones();
 
@@ -56,7 +65,7 @@ public class VendedorPerfilControlador {
 			@Override
 			public void handle(ActionEvent e) {
 				try {
-					// app.getAdmin(getUsername()).setLogged(false);
+					vendedor.setLogged(false);
 					cargarVentana("/vista/LoginUI.fxml");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
@@ -69,7 +78,7 @@ public class VendedorPerfilControlador {
 			@Override
 			public void handle(ActionEvent e) {
 				try {
-					// app.getAdmin(getUsername()).setLogged(false);
+					
 					cargarVentana("/vista/VendedorUI.fxml");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block

@@ -38,4 +38,14 @@ public class Vendedor extends Persona {
 	public List<Producto> getProductos() {
 		return productos;
 	}
+
+	
+	public void borrarProducto(int id) {
+			Producto removable = null;
+			for (Producto aux : productos) {
+				if (aux.getIdProducto() == id)
+					removable = aux;
+			}
+			if (removable != null) productos.remove(removable);			
+	}
 }
