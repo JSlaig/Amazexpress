@@ -6,6 +6,11 @@
 	-fx-font-size: 30px;
 }
 
+ListView{
+	-fx-background-color: #3B4148;
+	-fx-text-fill: #ADADAD;
+}
+
 .txtfield{
 	-fx-background-color: #3B4148;
 	-fx-background-radius: 0px;
@@ -14,16 +19,20 @@
 	-fx-font-size: 14px;
 }
 
-ListView{
-	-fx-background-color: #3B4148;
-	-fx-text-fill: #ADADAD;
-}
-
 .txtfield:focused{
 	-fx-background-color: #363b41;
 	-fx-background-radius: 0px;
 	-fx-prompt-text-fill: #ADADAD;
 	-fx-text-fill: #ADADAD;
+	-fx-font-size: 14px;
+}
+
+TextArea .content{
+	-fx-background-color: #303138;	
+	-fx-text-fill: #FFFFFF;
+	-fx-highlight-text-fill: #ffffff;
+	-fx-highlight-fill: #ffffff;
+	-fx-display-caret:true;
 	-fx-font-size: 14px;
 }
 
@@ -75,6 +84,40 @@ Button:hover{
 .AdminButtonsSelected{
 	-fx-background-color: #303138;
 	-fx-text-fill: #FFFFFF;
+	-fx-font-size: 14px;
+}
+
+.VendedorButtons{
+	-fx-background-color: #303138;
+	-fx-text-fill: #FFFFFF;
+	-fx-font-size: 30px;
+}
+
+.VendedorButtonsSelected{
+	-fx-background-color: #3B4148;
+	-fx-text-fill: #FFFFFF;
+	-fx-font-size: 30px;
+}
+
+.VendedorButtons:hover{
+	-fx-background-color: #515963;
+	-fx-text-fill: #FFFFFF;
+	-fx-font-size: 30px;
+}
+
+.txtfield2{
+	-fx-background-color: #303138;
+	-fx-background-radius: 0px;
+	-fx-prompt-text-fill: #ADADAD;
+	-fx-text-fill: #ADADAD;
+	-fx-font-size: 14px;
+}
+
+.txtfield2:focused{
+	-fx-background-color: #363b41;
+	-fx-background-radius: 0px;
+	-fx-prompt-text-fill: #ADADAD;
+	-fx-text-fill: #ADADAD;
 	-fx-font-size: 14px;
 }
 

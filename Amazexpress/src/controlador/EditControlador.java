@@ -97,7 +97,6 @@ public class EditControlador {
 			if(tipo.equals("admin")) {
 				
 				nombre.setText(app.getAdmins().get(id).getNombre());
-				System.out.println("hola"+app.getAdmins().get(id).getNombre());
 				apellidos.setText(app.getAdmins().get(id).getApellidos());
 				nUsuario.setText(app.getAdmins().get(id).getNUsuario());
 				pass.setText(app.getAdmins().get(id).getPass());

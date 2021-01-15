@@ -119,12 +119,13 @@ public class AdminControladorAdmin {
 							item = item.substring(0,1);
 							System.out.println(item);
 							idEdit = Integer.parseInt(item);
-							EditControlador.setTipo("admin");
-							EditControlador.setId(idEdit);
+							
+							//EditControlador.setTipo("admin");
+							//EditControlador.setId(idEdit);							
 							
 							//Cargamos nueva ventana
 							FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/EditUI.fxml"));
-				
+							
 							Parent ventana = (Parent) loader.load();
 							
 							Stage secondaryStage = new Stage();	
@@ -137,7 +138,8 @@ public class AdminControladorAdmin {
 							secondaryStage.setTitle("Edit");
 							secondaryStage.setScene(new Scene(ventana));
 							
-							secondaryStage.show(); 
+							secondaryStage.show(); 							
+							
 						}
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block

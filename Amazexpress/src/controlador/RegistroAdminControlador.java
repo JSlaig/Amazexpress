@@ -87,6 +87,8 @@ public class RegistroAdminControlador {
 			System.out.println("Registro correcto");
 			estado.setText("Registro correcto");
 			
+			
+			
 			try {
 				Thread.sleep(1*1000);
 			} catch (InterruptedException e) {
