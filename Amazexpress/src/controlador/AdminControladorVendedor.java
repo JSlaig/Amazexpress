@@ -126,7 +126,7 @@ public class AdminControladorVendedor {
 	    	cerrarSesion.setOnAction(new EventHandler<ActionEvent>() {
 	    	    @Override public void handle(ActionEvent e) {    	        
 						try {
-							app.getAdmin(getUsername()).setLogged(false);
+							//app.getAdmin(getUsername()).setLogged(false);
 							cargarVentana("/vista/LoginUI.fxml");
 						} catch (IOException e1) {
 							// TODO Auto-generated catch block

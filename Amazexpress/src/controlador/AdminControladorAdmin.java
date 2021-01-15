@@ -59,6 +59,7 @@ public class AdminControladorAdmin {
     
     private int idEdit;
     
+    
     @FXML
     void initialize() {
     	
@@ -113,27 +114,31 @@ public class AdminControladorAdmin {
     	    @Override public void handle(ActionEvent e) {    	        
 					try {
 						//Sacamos el id del admin
-						String item = listView.getSelectionModel().getSelectedItem();
-						item = item.substring(0,1);
-						System.out.println(item);
-						idEdit = Integer.parseInt(item);
-						
-						//Cargamos nueva ventana
-						FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/EditUI.fxml"));
-			
-						Parent ventana = (Parent) loader.load();
-						
-						Stage secondaryStage = new Stage();	
-						
-						secondaryStage.initOwner(Amazexpress.stage);
-						secondaryStage.initModality(Modality.APPLICATION_MODAL);
-						
-						Image img = new Image(getClass().getResource("/amazexpress_logo_main.png").toExternalForm());
-						secondaryStage.getIcons().add(img);						
-						secondaryStage.setTitle("Edit");
-						secondaryStage.setScene(new Scene(ventana));
-						
-						secondaryStage.show(); 
+						if(listView.getSelectionModel().getSelectedItem() != null) {
+							String item = listView.getSelectionModel().getSelectedItem();
+							item = item.substring(0,1);
+							System.out.println(item);
+							idEdit = Integer.parseInt(item);
+							EditControlador.setTipo("admin");
+							EditControlador.setId(idEdit);
+							
+							//Cargamos nueva ventana
+							FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/EditUI.fxml"));
+				
+							Parent ventana = (Parent) loader.load();
+							
+							Stage secondaryStage = new Stage();	
+							
+							secondaryStage.initOwner(Amazexpress.stage);
+							secondaryStage.initModality(Modality.APPLICATION_MODAL);
+							
+							Image img = new Image(getClass().getResource("/amazexpress_logo_main.png").toExternalForm());
+							secondaryStage.getIcons().add(img);						
+							secondaryStage.setTitle("Edit");
+							secondaryStage.setScene(new Scene(ventana));
+							
+							secondaryStage.show(); 
+						}
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -164,7 +169,7 @@ public class AdminControladorAdmin {
     	}
     root.getChildren().addAll(listView);
     }
-	
+
 	private String getUsername() {
 		// TODO Auto-generated method stub
 		int i = 1;
@@ -183,7 +188,7 @@ public class AdminControladorAdmin {
 	    	cerrarSesion.setOnAction(new EventHandler<ActionEvent>() {
 	    	    @Override public void handle(ActionEvent e) {    	        
 						try {
-							app.getAdmin(getUsername()).setLogged(false);
+							//app.getAdmin(getUsername()).setLogged(false);
 							cargarVentana("/vista/LoginUI.fxml");
 						} catch (IOException e1) {
 							// TODO Auto-generated catch block
@@ -248,6 +253,5 @@ public class AdminControladorAdmin {
 		root.getChildren().removeAll();
     	root.getChildren().setAll(ventana);
     }
-    
     
 }

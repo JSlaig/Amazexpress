@@ -7,21 +7,13 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="450.0" styleClass="parent" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.EditControlador">
    <children>
-      <Label layoutX="34.0" layoutY="36.0" prefHeight="45.0" prefWidth="36.0" styleClass="AdminButtonsSelected" text="Tipo:" />
-      <Label layoutX="34.0" layoutY="81.0" prefHeight="45.0" prefWidth="60.0" styleClass="AdminButtonsSelected" text="Nombre:" />
-      <Label layoutX="34.0" layoutY="126.0" prefHeight="45.0" prefWidth="66.0" styleClass="AdminButtonsSelected" text="Apellidos:" />
-      <Label layoutX="31.0" layoutY="171.0" prefHeight="45.0" prefWidth="130.0" styleClass="AdminButtonsSelected" text="Nombre de usuario:" />
-      <Label layoutX="29.0" layoutY="216.0" prefHeight="45.0" prefWidth="80.0" styleClass="AdminButtonsSelected" text="Contraseña:" />
-      <Label layoutX="30.0" layoutY="261.0" prefHeight="45.0" prefWidth="44.0" styleClass="AdminButtonsSelected" text="Email:" />
-      <Label layoutX="30.0" layoutY="306.0" prefHeight="45.0" prefWidth="60.0" styleClass="AdminButtonsSelected" text="Telefono:" />
+      <Label layoutX="37.0" layoutY="44.0" prefHeight="45.0" prefWidth="60.0" styleClass="AdminButtonsSelected" text="Nombre:" />
+      <Label layoutX="34.0" layoutY="96.0" prefHeight="45.0" prefWidth="66.0" styleClass="AdminButtonsSelected" text="Apellidos:" />
+      <Label layoutX="35.0" layoutY="150.0" prefHeight="45.0" prefWidth="130.0" styleClass="AdminButtonsSelected" text="Nombre de usuario:" />
+      <Label layoutX="39.0" layoutY="203.0" prefHeight="45.0" prefWidth="80.0" styleClass="AdminButtonsSelected" text="Contraseña:" />
+      <Label layoutX="35.0" layoutY="255.0" prefHeight="45.0" prefWidth="44.0" styleClass="AdminButtonsSelected" text="Email:" />
+      <Label layoutX="37.0" layoutY="308.0" prefHeight="45.0" prefWidth="60.0" styleClass="AdminButtonsSelected" text="Telefono:" />
       <Button fx:id="cancelar" layoutX="50.0" layoutY="418.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="142.0" text="Cancelar" />
       <Button fx:id="actualizar" layoutX="261.0" layoutY="418.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="142.0" text="Actualizar" />
-      <TextField layoutX="237.0" layoutY="89.0" styleClass="txtfield" />
-      <TextField layoutX="237.0" layoutY="134.0" styleClass="txtfield" />
-      <TextField layoutX="237.0" layoutY="179.0" styleClass="txtfield" />
-      <TextField layoutX="237.0" layoutY="224.0" styleClass="txtfield" />
-      <TextField layoutX="237.0" layoutY="269.0" styleClass="txtfield" />
-      <TextField layoutX="237.0" layoutY="314.0" styleClass="txtfield" />
-      <Label layoutX="237.0" layoutY="36.0" prefHeight="45.0" prefWidth="175.0" styleClass="parent" />
    </children>
 </AnchorPane>
