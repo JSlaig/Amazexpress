@@ -1,11 +1,15 @@
 package modelo;
 
+import java.util.HashMap;
+
 public class Vendedor extends Persona{	
 	
 	
 	//Atributos de vendedor
 	private int idVendedor;
 	private double balance;
+	
+	private HashMap<Integer, Producto> productos;
 	
 	
 	//Constructor con los param de la superclase
@@ -16,6 +20,8 @@ public class Vendedor extends Persona{
 		
 		this.idVendedor = idVendedor;	
 		this.balance = balance;
+		
+		productos = new HashMap<Integer, Producto>();
 	}
 	
 	
@@ -27,5 +33,10 @@ public class Vendedor extends Persona{
 	
 	public double getbalance() {
 		return this.balance;
+	}
+
+
+	public HashMap<Integer, Producto> getProductos() {
+		return productos;
 	}
 }

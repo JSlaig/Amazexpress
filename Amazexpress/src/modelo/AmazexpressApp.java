@@ -55,7 +55,7 @@ public class AmazexpressApp {
 		}else {
 			//do nothing
 		}
-		
+		System.out.println("Instancia de amazexpress invocada");
 		return app;
 	}
 	
@@ -65,6 +65,21 @@ public class AmazexpressApp {
 	public void importarBBDD() {
 		//Por implementar
 		app.registro("admin", "admin", "admin", "admin", "admin", "admin", "admin");
+	}
+	
+	public Vendedor getLoggedVendedor() {
+		Vendedor vendor = null;
+		
+		int i = 1;
+	
+		while(i < this.vendedores.size() && this.vendedores.get(i).getLogged() == false) {
+			if(this.vendedores.get(i) != null && this.vendedores.get(i).getLogged() == true) {
+				vendor = this.vendedores.get(i);
+			}
+			i++;
+		}
+		
+		return vendor;
 	}
 	
 	

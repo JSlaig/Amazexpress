@@ -186,7 +186,7 @@ public class LoginControlador{
         		
         		case "vendedor":
         			//Desde aqui abririamos la ventana de vendedor
-        			//app.getVendedor(nUsuario).setLogged(true);
+        			app.getVendedor(nUsuario).setLogged(true);
         			
         			estado.setText("Login correcto");
         			

@@ -4,21 +4,23 @@ public class Producto {
 
 //Atributos de producto
 	public int idProducto;
-	public boolean vendido;
 	private String nombre;
-	private String estado;
 	private String vendedor;
 	private String descripcion;
-	private String comprador;
+	private double precio;
+	private int stock;
 	
 //Constructor
-	public Producto(String nombre, String estado, String descripcion, String vendedor, String comprador, boolean vendido) {
+	public Producto(String nombre, String descripcion, String vendedor, double precio, int stock) {
 		this.nombre = nombre;
-		this.estado = estado;
 		this.descripcion = descripcion;
 		this.vendedor = vendedor;
-		this.comprador = comprador;
-		this.vendido = vendido;
+		this.setPrecio(precio);
+		if(stock >= 0) {
+			this.setStock(stock);
+		}else {
+			this.setStock(0);
+		}
 	}
 
 //Getters
@@ -26,17 +28,9 @@ public class Producto {
 		return this.idProducto;
 	}
 	
-	public boolean getVendido() {
-		return this.vendido;
-	}
-	
     public String getNombre() {
 
         return this.nombre;
-    }
-
-    public String getEstado(){
-        return this.estado;
     }
     
     public String getDescripcion(){
@@ -47,7 +41,19 @@ public class Producto {
         return this.vendedor;
     }
 
-    public String getComprador(){
-        return this.comprador;
-    }
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
 }

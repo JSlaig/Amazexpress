@@ -12,7 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
-public class VendedorControlador {
+public class VendedorPerfilControlador {
 
     @FXML
     private ResourceBundle resources;
@@ -46,11 +46,13 @@ public class VendedorControlador {
 
     @FXML
     void initialize() {
+    	
     	inicializarBotones();
-    }
 
-	private void inicializarBotones() {
-		cerrarSesion.setOnAction(new EventHandler<ActionEvent>() {
+    }
+    
+    private void inicializarBotones() {
+    	cerrarSesion.setOnAction(new EventHandler<ActionEvent>() {
     	    @Override public void handle(ActionEvent e) {    	        
 					try {
 						//app.getAdmin(getUsername()).setLogged(false);
@@ -62,11 +64,11 @@ public class VendedorControlador {
     	    }
     	});
 		
-		perfilBoton.setOnAction(new EventHandler<ActionEvent>() {
+		tiendaBoton.setOnAction(new EventHandler<ActionEvent>() {
     	    @Override public void handle(ActionEvent e) {    	        
 					try {
 						//app.getAdmin(getUsername()).setLogged(false);
-						cargarVentana("/vista/VendedorPerfil.fxml"); 
+						cargarVentana("/vista/VendedorUI.fxml"); 
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

@@ -1,8 +1,6 @@
 package controlador;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -12,20 +10,10 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
-public class VendedorControlador {
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-    
-    @FXML
+public class VendedorControladorBalance {
+	@FXML
     private Button cerrarSesion;
-    
-    @FXML
-    private AnchorPane root;
-    
+
     @FXML
     private Button perfilBoton;
 
@@ -43,18 +31,34 @@ public class VendedorControlador {
 
     @FXML
     private Button historialBoton;
-
+    
+    @FXML
+    private AnchorPane root;
+    
     @FXML
     void initialize() {
     	inicializarBotones();
     }
-
-	private void inicializarBotones() {
+    
+    private void inicializarBotones() {
+		// TODO Auto-generated method stub
 		cerrarSesion.setOnAction(new EventHandler<ActionEvent>() {
     	    @Override public void handle(ActionEvent e) {    	        
 					try {
 						//app.getAdmin(getUsername()).setLogged(false);
 						cargarVentana("/vista/LoginUI.fxml"); 
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}					
+    	    }
+    	});
+		
+		tiendaBoton.setOnAction(new EventHandler<ActionEvent>() {
+    	    @Override public void handle(ActionEvent e) {    	        
+					try {
+						//app.getAdmin(getUsername()).setLogged(false);
+						cargarVentana("/vista/VendedorUI.fxml"); 
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -79,18 +83,6 @@ public class VendedorControlador {
 					try {
 						//app.getAdmin(getUsername()).setLogged(false);
 						cargarVentana("/vista/VendedorMensajesUI.fxml"); 
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}					
-    	    }
-    	});
-		
-		balanceBoton.setOnAction(new EventHandler<ActionEvent>() {
-    	    @Override public void handle(ActionEvent e) {    	        
-					try {
-						//app.getAdmin(getUsername()).setLogged(false);
-						cargarVentana("/vista/VendedorBalanceUI.fxml"); 
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

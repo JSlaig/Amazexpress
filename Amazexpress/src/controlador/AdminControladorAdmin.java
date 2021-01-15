@@ -57,9 +57,6 @@ public class AdminControladorAdmin {
     @FXML
     private Button compradoresBoton;
     
-    private int idEdit;
-    
-    
     @FXML
     void initialize() {
     	
@@ -118,7 +115,7 @@ public class AdminControladorAdmin {
 							String item = listView.getSelectionModel().getSelectedItem();
 							item = item.substring(0,1);
 							System.out.println(item);
-							idEdit = Integer.parseInt(item);
+							Integer.parseInt(item);
 							
 							//EditControlador.setTipo("admin");
 							//EditControlador.setId(idEdit);							

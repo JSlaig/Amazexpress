@@ -8,18 +8,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="parent" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.VendedorControlador">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="parent" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.VendedorControladorBalance">
    <children>
       <Pane layoutY="100.0" prefHeight="620.0" prefWidth="1280.0" styleClass="dashboard">
          <children>
             <VBox prefHeight="620.0" prefWidth="228.0" styleClass="parent">
                <children>
-                  <Button fx:id="tiendaBoton" mnemonicParsing="false" prefHeight="85.0" prefWidth="228.0" styleClass="VendedorButtonsSelected" text="TIENDA" />
+                  <Button fx:id="tiendaBoton" mnemonicParsing="false" prefHeight="85.0" prefWidth="228.0" styleClass="VendedorButtons" text="TIENDA" />
                   <Button fx:id="productosBoton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="228.0" styleClass="VendedorButtons" text="PRODUCTOS" />
                   <Button fx:id="mensajesBoton" mnemonicParsing="false" prefHeight="85.0" prefWidth="228.0" styleClass="VendedorButtons" text="MENSAJES" />
                   <Button fx:id="perfilBoton" mnemonicParsing="false" prefHeight="85.0" prefWidth="228.0" styleClass="VendedorButtons" text="PERFIL" />
                   <Button fx:id="historialBoton" mnemonicParsing="false" prefHeight="85.0" prefWidth="228.0" styleClass="VendedorButtons" text="HISTORIAL" />
-                  <Button fx:id="balanceBoton" mnemonicParsing="false" prefHeight="85.0" prefWidth="228.0" styleClass="VendedorButtons" text="BALANCE" />
+                  <Button fx:id="balanceBoton" mnemonicParsing="false" prefHeight="85.0" prefWidth="228.0" styleClass="VendedorButtonsSelected" text="BALANCE" />
                   <Button fx:id="cerrarSesion" mnemonicParsing="false" prefHeight="90.0" prefWidth="226.0" text="CERRAR SESION">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
@@ -32,9 +32,9 @@
             </VBox>
             <Pane layoutX="228.0" prefHeight="620.0" prefWidth="1052.0">
                <children>
-                  <Label layoutX="340.0" layoutY="202.0" prefHeight="217.0" prefWidth="372.0" text="Por implementar..." textFill="WHITE">
+                  <Label layoutX="329.0" layoutY="231.0" prefHeight="158.0" prefWidth="395.0" text="Por implementar..." textFill="WHITE">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="43.0" />
                      </font>
                   </Label>
                </children>
