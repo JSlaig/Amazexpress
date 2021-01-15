@@ -25,9 +25,15 @@ public class CompradorProductoControlador {
 
 	@FXML
 	private URL location;
+	
+	@FXML
+	private Button comprar;
 
 	@FXML
 	private Button crearProducto;
+	
+	@FXML
+	ListView<String> listView;
 
 	@FXML
 	private Button editarProducto;
@@ -86,13 +92,33 @@ public class CompradorProductoControlador {
 				}
 			}
 		});
+		
+		comprar.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				try {
+					
+					String id = listView.getSelectionModel().getSelectedItem();
+					id = id.substring(0,1);
+					
+					app.borrarProducto(Integer.valueOf(id));
+					//app.getVendedorProducto(id).borrarProducto(Integer.valueOf(id));					
+					
+					
+					cargarVentana("/vista/CompradorProductosUI.fxml");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 
 		productosBoton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				try {
 					// app.getAdmin(getUsername()).setLogged(false);
-					cargarVentana("/vista/CompradorUI.fxml");
+					cargarVentana("/vista/CompradorProductosUI.fxml");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -161,7 +187,7 @@ public class CompradorProductoControlador {
 
 	private void inicializarLista() {
 		// TODO Auto-generated method stub
-		ListView<String> listView = new ListView<String>();
+		listView = new ListView<String>();
 
 		// Sizes
 		listView.setLayoutX(275);

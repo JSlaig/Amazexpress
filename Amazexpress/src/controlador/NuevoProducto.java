@@ -1,6 +1,10 @@
 package controlador;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -11,6 +15,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import modelo.AmazexpressApp;
+import modelo.Conexion;
 import modelo.Producto;
 import modelo.Vendedor;
 
@@ -60,7 +65,7 @@ public class NuevoProducto {
 			}
 		});
 
-		crear.setOnAction(new EventHandler<ActionEvent>() {
+		crear.setOnAction(new EventHandler<ActionEvent>() { 
 			@Override
 			public void handle(ActionEvent e) {
 				try {
@@ -70,6 +75,24 @@ public class NuevoProducto {
 							Integer.valueOf(stock.getText()));
 					app.getProductos().add(producto);
 					vendedor.getProductos().add(producto);
+					
+					Conexion conexion = new Conexion();
+                    Connection cn = null;
+                    Statement stm = null;
+
+                    String nombre2 = nombre.getText();
+                    String descripcion2 = descripcion.getText();
+                    Double precio2 = Double.valueOf(precio.getText());
+                    int stock2 = Integer.valueOf(stock.getText());
+
+                    try {
+                        cn = conexion.conectar();
+                        stm = cn.createStatement();
+                        stm.executeUpdate("INSERT INTO amazexpressbbdd.producto (nombre, descripcion, precio, stock) values ('"+nombre2+"','"+descripcion2+"','"+precio2+"','"+stock2);
+                        System.out.println("Producto añadido");
+                    } catch (SQLException e2) {
+
+                    }
 
 					cargarVentana("/vista/VendedorProductosUI.fxml");
 				} catch (IOException e1) {

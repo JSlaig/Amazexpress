@@ -127,7 +127,7 @@ public class VendedorProductoControlador {
 			@Override
 			public void handle(ActionEvent e) {
 				try {
-					// app.getAdmin(getUsername()).setLogged(false);
+					// app.getAdmin(getUsername()).setLogged(false); 
 					cargarVentana("/vista/VendedorMensajesUI.fxml");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
@@ -166,7 +166,7 @@ public class VendedorProductoControlador {
 			@Override
 			public void handle(ActionEvent e) {
 				try {
-					// app.getAdmin(getUsername()).setLogged(false);
+					
 					cargarVentana("/vista/CrearProducto.fxml");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block

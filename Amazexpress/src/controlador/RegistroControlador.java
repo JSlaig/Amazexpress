@@ -31,7 +31,7 @@ import javafx.util.Duration;
 import modelo.AmazexpressApp;
 import modelo.Conexion;
 
-public class RegistroControlador {
+public class RegistroControlador { 
 
 	@FXML
 	private ResourceBundle resources;
@@ -145,7 +145,7 @@ public class RegistroControlador {
 	        try {
 	            cn = conexion.conectar();
 	            stm = cn.createStatement();
-	            stm.executeUpdate("INSERT INTO amazexpress.administrador (nombre, apellidos, email, nUsuario, password, telefono) values ('"+nombre+"','"+apellidos+"','"+email+"','"+nUsuario+"','"+password+"','"+telefono+"')");
+	            stm.executeUpdate("INSERT INTO amazexpressbbdd.administrador (nombre, apellidos, email, nUsuario, password, telefono) values ('"+nombre+"','"+apellidos+"','"+email+"','"+nUsuario+"','"+password+"','"+telefono+"')");
 	            System.out.println("Administrador añadido");
 	        } catch(SQLException e) {
 
@@ -167,7 +167,7 @@ public class RegistroControlador {
 	        try {
 	            cn = conexion.conectar();
 	            stm = cn.createStatement();
-	            stm.executeUpdate("INSERT INTO amazexpress.comprador (nombre, apellidos, email, nUsuario, password, telefono) values ('"+nombre+"','"+apellidos+"','"+email+"','"+nUsuario+"','"+password+"','"+telefono+"')");
+	            stm.executeUpdate("INSERT INTO amazexpressbbdd.comprador (nombre, apellidos, email, nUsuario, password, telefono) values ('"+nombre+"','"+apellidos+"','"+email+"','"+nUsuario+"','"+password+"','"+telefono+"')");
 	            System.out.println("Comprador añadido");
 	        } catch(SQLException e) {
 
@@ -188,7 +188,7 @@ public class RegistroControlador {
 	        try {
 	            cn = conexion.conectar();
 	            stm = cn.createStatement();
-	            stm.executeUpdate("INSERT INTO amazexpress.vendedor (nombre, apellidos, email, nUsuario, password, telefono) values ('"+nombre+"','"+apellidos+"','"+email+"','"+nUsuario+"','"+password+"','"+telefono+"')");
+	            stm.executeUpdate("INSERT INTO amazexpressbbdd.vendedor (nombre, apellidos, email, nUsuario, password, telefono) values ('"+nombre+"','"+apellidos+"','"+email+"','"+nUsuario+"','"+password+"','"+telefono+"')");
 	            System.out.println("Vendedor añadido");
 	        } catch(SQLException e) {
 

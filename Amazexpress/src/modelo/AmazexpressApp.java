@@ -26,7 +26,7 @@ public class AmazexpressApp {
 	private List<Producto> productos;
 
 	public List<Administrador> getAdmins() {
-		return admins;
+		return admins; 
 	}
 
 	public List<Vendedor> getVendedores() {
@@ -478,6 +478,17 @@ public class AmazexpressApp {
 			}
 		}
 		return retorno;
+	}
+	
+	public Vendedor getVendedorProducto(String id) {
+
+		Producto retorno = null;
+		for (Producto aux : productos) {
+			if (id.equals(aux.getIdProducto()) == true) {
+				retorno = aux;
+			}
+		}
+		return getVendedor(retorno.getVendedor());
 	}
 
 	/**

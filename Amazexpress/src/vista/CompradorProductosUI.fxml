@@ -30,7 +30,7 @@
             </VBox>
             <Pane layoutX="228.0" prefHeight="620.0" prefWidth="1052.0">
                <children>
-                  <Button fx:id="crearProducto" layoutX="900.0" layoutY="23.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Comprar" />
+                  <Button fx:id="comprar" layoutX="900.0" layoutY="23.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Comprar" />
                </children>
             </Pane>
          </children>
